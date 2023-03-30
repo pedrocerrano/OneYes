@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29C0195629D5DE9F009EC687 /* quotesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 29C0195529D5DE9F009EC687 /* quotesData.json */; };
 		29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA059C29D4913A00514F90 /* AppDelegate.swift */; };
 		29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA059E29D4913A00514F90 /* SceneDelegate.swift */; };
 		29FA05A129D4913A00514F90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA05A029D4913A00514F90 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29C0195529D5DE9F009EC687 /* quotesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotesData.json; sourceTree = "<group>"; };
 		29FA059929D4913A00514F90 /* OneYes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneYes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FA059C29D4913A00514F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29FA059E29D4913A00514F90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		29C0195429D5DE10009EC687 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29C0195529D5DE9F009EC687 /* quotesData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		29FA059029D4913A00514F90 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				29FA05A029D4913A00514F90 /* ViewController.swift */,
+				29C0195429D5DE10009EC687 /* Resources */,
 				29C0195329D5DD39009EC687 /* Storyboards */,
 				29C0195229D5DD12009EC687 /* Supporting Files */,
 			);
@@ -143,6 +154,7 @@
 			files = (
 				29FA05A929D4913C00514F90 /* LaunchScreen.storyboard in Resources */,
 				29FA05A629D4913C00514F90 /* Assets.xcassets in Resources */,
+				29C0195629D5DE9F009EC687 /* quotesData.json in Resources */,
 				29FA05A429D4913A00514F90 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
