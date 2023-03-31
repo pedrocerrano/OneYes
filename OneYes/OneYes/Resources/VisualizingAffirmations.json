@@ -1,0 +1,45 @@
+{
+    {
+        "username": "ScottyA",
+        "affirmations": [
+            {
+                "title": "Affirmation Title 1",
+                "beginningDate": "03/30/23",
+                "completedDate": "?",
+                "isCompleted": false,
+                "logs": [
+                    {
+                        "logTitle": "Log Title 1"
+                        "logDate": "03/30/23"
+                        "logUUID" "UUID().uuidString"
+                    },
+                    {
+                        "logTitle": "Log Title 2"
+                        "logDate": "03/31/23"
+                        "logUUID" "UUID().uuidString"
+                    }
+                ],
+                "affirmationUUID" "UUID().uuidString"
+            },
+            {
+                "title": "Affirmation Title 2",
+                "beginningDate": "04/01/23",
+                "completedDate": "?",
+                "isCompleted": false,
+                "logs": [
+                    {
+                        "logTitle": "Log Title 1"
+                        "logDate": "03/30/23"
+                        "logUUID" "UUID().uuidString"
+                    },
+                    {
+                        "logTitle": "Log Title 2"
+                        "logDate": "03/31/23"
+                        "logUUID" "UUID().uuidString"
+                    }
+                ],
+                "affirmationUUID" "UUID().uuidString"
+            }
+        ]
+    }
+}
