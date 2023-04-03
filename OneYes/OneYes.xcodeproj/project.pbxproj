@@ -11,6 +11,9 @@
 		29C0196229D60CA4009EC687 /* VisualizingAffirmations.json in Resources */ = {isa = PBXBuildFile; fileRef = 29C0196129D60CA4009EC687 /* VisualizingAffirmations.json */; };
 		29C0196429D63B42009EC687 /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196329D63B42009EC687 /* Affirmation.swift */; };
 		29C0196629D63B77009EC687 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196529D63B77009EC687 /* Log.swift */; };
+		29DFF1AC29DB290300096F47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */; };
+		29DFF1AF29DB2A6100096F47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29DFF1AE29DB2A6100096F47 /* FirebaseFirestore */; };
+		29DFF1B229DB337900096F47 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFF1B129DB337900096F47 /* FirebaseService.swift */; };
 		29EAC17A29D73C30003EDB84 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EAC17929D73C30003EDB84 /* Quote.swift */; };
 		29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA059C29D4913A00514F90 /* AppDelegate.swift */; };
 		29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA059E29D4913A00514F90 /* SceneDelegate.swift */; };
@@ -25,6 +28,8 @@
 		29C0196129D60CA4009EC687 /* VisualizingAffirmations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VisualizingAffirmations.json; sourceTree = "<group>"; };
 		29C0196329D63B42009EC687 /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
 		29C0196529D63B77009EC687 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		29DFF1B129DB337900096F47 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		29EAC17929D73C30003EDB84 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		29FA059929D4913A00514F90 /* OneYes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneYes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FA059C29D4913A00514F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29DFF1AF29DB2A6100096F47 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +100,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		29DFF1B029DB335E00096F47 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				29DFF1B129DB337900096F47 /* FirebaseService.swift */,
+			);
+			path = "Helper Files";
+			sourceTree = "<group>";
+		};
 		29FA059029D4913A00514F90 = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +128,12 @@
 			isa = PBXGroup;
 			children = (
 				29C0195D29D60122009EC687 /* Models */,
+				29DFF1B029DB335E00096F47 /* Helper Files */,
 				29C0196029D603F4009EC687 /* UI */,
 				29C0195329D5DD39009EC687 /* Storyboards */,
 				29C0195429D5DE10009EC687 /* Resources */,
 				29C0195229D5DD12009EC687 /* Supporting Files */,
+				29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */,
 			);
 			path = OneYes;
 			sourceTree = "<group>";
@@ -138,6 +154,9 @@
 			dependencies = (
 			);
 			name = OneYes;
+			packageProductDependencies = (
+				29DFF1AE29DB2A6100096F47 /* FirebaseFirestore */,
+			);
 			productName = OneYes;
 			productReference = 29FA059929D4913A00514F90 /* OneYes.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +185,9 @@
 				Base,
 			);
 			mainGroup = 29FA059029D4913A00514F90;
+			packageReferences = (
+				29DFF1AD29DB2A6100096F47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 29FA059A29D4913A00514F90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -185,6 +207,7 @@
 				29FA05A629D4913C00514F90 /* Assets.xcassets in Resources */,
 				29C0195629D5DE9F009EC687 /* quotesData.json in Resources */,
 				29FA05A429D4913A00514F90 /* Main.storyboard in Resources */,
+				29DFF1AC29DB290300096F47 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +222,7 @@
 				29C0196629D63B77009EC687 /* Log.swift in Sources */,
 				29FA05A129D4913A00514F90 /* ViewController.swift in Sources */,
 				29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */,
+				29DFF1B229DB337900096F47 /* FirebaseService.swift in Sources */,
 				29EAC17A29D73C30003EDB84 /* Quote.swift in Sources */,
 				29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */,
 			);
@@ -418,6 +442,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29DFF1AD29DB2A6100096F47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29DFF1AE29DB2A6100096F47 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29DFF1AD29DB2A6100096F47 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29FA059129D4913A00514F90 /* Project object */;
 }

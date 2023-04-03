@@ -16,6 +16,8 @@ class Affirmation {
         static let isCompleted     = "isCompleted"
         static let logs            = "logs"
         static let affirmationUUID = "affirmationUUID"
+        
+        static let collectionType  = "userAffirmations"
     }
     
     //MARK: - PROPERTIES
@@ -38,7 +40,7 @@ class Affirmation {
         ]
     }
     
-    init(title: String, startDate: Date = Date(), completedDate: Date = Date(), isCompleted: Bool, logs: [Log], affirmationUUID: String = UUID().uuidString) {
+    init(title: String, startDate: Date = Date(), completedDate: Date = Date(), isCompleted: Bool, logs: [Log], affirmationUUID: String) {
         self.title           = title
         self.startDate       = startDate
         self.completedDate   = completedDate
