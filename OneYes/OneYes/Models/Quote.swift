@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Quote {
+struct Quote: Decodable {
     
     let quote: String
     let author: String
