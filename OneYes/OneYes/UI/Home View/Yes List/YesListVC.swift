@@ -32,7 +32,7 @@ class YesListVC: UIViewController {
 //MARK: - EXT: CollectionView DataSource
 extension YesListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

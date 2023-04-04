@@ -13,6 +13,8 @@
 		290E2F4629DC7DEF006A1049 /* NoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F4529DC7DEF006A1049 /* NoListVC.swift */; };
 		290E2F4829DC7EEE006A1049 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F4729DC7EEE006A1049 /* Constants.swift */; };
 		290E2F4B29DC8463006A1049 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F4A29DC8463006A1049 /* HomeViewController.swift */; };
+		290E2F4E29DC91BE006A1049 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F4D29DC91BE006A1049 /* DetailViewController.swift */; };
+		290E2F5129DC9C07006A1049 /* LogListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F5029DC9C07006A1049 /* LogListCollectionViewCell.swift */; };
 		29C0195629D5DE9F009EC687 /* quotesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 29C0195529D5DE9F009EC687 /* quotesData.json */; };
 		29C0196429D63B42009EC687 /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196329D63B42009EC687 /* Affirmation.swift */; };
 		29C0196629D63B77009EC687 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196529D63B77009EC687 /* Log.swift */; };
@@ -37,6 +39,8 @@
 		290E2F4529DC7DEF006A1049 /* NoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoListVC.swift; sourceTree = "<group>"; };
 		290E2F4729DC7EEE006A1049 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		290E2F4A29DC8463006A1049 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		290E2F4D29DC91BE006A1049 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		290E2F5029DC9C07006A1049 /* LogListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListCollectionViewCell.swift; sourceTree = "<group>"; };
 		29C0195529D5DE9F009EC687 /* quotesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotesData.json; sourceTree = "<group>"; };
 		29C0196329D63B42009EC687 /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
 		29C0196529D63B77009EC687 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -101,12 +105,32 @@
 			path = "No LIst Custom Views";
 			sourceTree = "<group>";
 		};
-		290E2F4929DC8453006A1049 /* Home */ = {
+		290E2F4929DC8453006A1049 /* Home View */ = {
 			isa = PBXGroup;
 			children = (
 				290E2F4A29DC8463006A1049 /* HomeViewController.swift */,
+				29DFF1B329DB4C1B00096F47 /* Quote and Need */,
+				290E2F4129DC7DA4006A1049 /* No LIst */,
+				290E2F3B29DC7306006A1049 /* Yes List */,
 			);
-			path = Home;
+			path = "Home View";
+			sourceTree = "<group>";
+		};
+		290E2F4C29DC915C006A1049 /* Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				290E2F4D29DC91BE006A1049 /* DetailViewController.swift */,
+				290E2F4F29DC9BDE006A1049 /* Detail View Custom Views */,
+			);
+			path = "Detail View";
+			sourceTree = "<group>";
+		};
+		290E2F4F29DC9BDE006A1049 /* Detail View Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				290E2F5029DC9C07006A1049 /* LogListCollectionViewCell.swift */,
+			);
+			path = "Detail View Custom Views";
 			sourceTree = "<group>";
 		};
 		29C0195229D5DD12009EC687 /* Supporting Files */ = {
@@ -152,10 +176,8 @@
 		29C0196029D603F4009EC687 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				290E2F4929DC8453006A1049 /* Home */,
-				290E2F4129DC7DA4006A1049 /* No LIst */,
-				290E2F3B29DC7306006A1049 /* Yes List */,
-				29DFF1B329DB4C1B00096F47 /* Quote and Need */,
+				290E2F4929DC8453006A1049 /* Home View */,
+				290E2F4C29DC915C006A1049 /* Detail View */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -293,9 +315,11 @@
 				290E2F4429DC7DD0006A1049 /* NoListCollectionViewCell.swift in Sources */,
 				290E2F4B29DC8463006A1049 /* HomeViewController.swift in Sources */,
 				29DFF1B229DB337900096F47 /* FirebaseService.swift in Sources */,
+				290E2F4E29DC91BE006A1049 /* DetailViewController.swift in Sources */,
 				290E2F4829DC7EEE006A1049 /* Constants.swift in Sources */,
 				290E2F4029DC7892006A1049 /* YesListCollectionViewCell.swift in Sources */,
 				29EAC17A29D73C30003EDB84 /* Quote.swift in Sources */,
+				290E2F5129DC9C07006A1049 /* LogListCollectionViewCell.swift in Sources */,
 				290E2F3D29DC733E006A1049 /* YesListVC.swift in Sources */,
 				290E2F4629DC7DEF006A1049 /* NoListVC.swift in Sources */,
 				29DFF1BC29DB54E300096F47 /* ModelData.swift in Sources */,
