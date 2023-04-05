@@ -19,6 +19,9 @@
 		29C0196429D63B42009EC687 /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196329D63B42009EC687 /* Affirmation.swift */; };
 		29C0196629D63B77009EC687 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196529D63B77009EC687 /* Log.swift */; };
 		29CB478929DDD7FB00E9C071 /* NeedYesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478829DDD7FB00E9C071 /* NeedYesViewModel.swift */; };
+		29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478A29DE128A00E9C071 /* NoListViewModel.swift */; };
+		29CB478D29DE12AE00E9C071 /* YesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478C29DE12AE00E9C071 /* YesListViewModel.swift */; };
+		29CB478F29DE12DA00E9C071 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478E29DE12DA00E9C071 /* DetailViewModel.swift */; };
 		29DFF1AC29DB290300096F47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */; };
 		29DFF1AF29DB2A6100096F47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29DFF1AE29DB2A6100096F47 /* FirebaseFirestore */; };
 		29DFF1B229DB337900096F47 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFF1B129DB337900096F47 /* FirebaseService.swift */; };
@@ -46,6 +49,9 @@
 		29C0196329D63B42009EC687 /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
 		29C0196529D63B77009EC687 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		29CB478829DDD7FB00E9C071 /* NeedYesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedYesViewModel.swift; sourceTree = "<group>"; };
+		29CB478A29DE128A00E9C071 /* NoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoListViewModel.swift; sourceTree = "<group>"; };
+		29CB478C29DE12AE00E9C071 /* YesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesListViewModel.swift; sourceTree = "<group>"; };
+		29CB478E29DE12DA00E9C071 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29DFF1B129DB337900096F47 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		29DFF1BB29DB54E300096F47 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				290E2F3C29DC733E006A1049 /* YesListVC.swift */,
+				29CB478C29DE12AE00E9C071 /* YesListViewModel.swift */,
 				290E2F3E29DC7854006A1049 /* Yes List Custom Views */,
 			);
 			path = "Yes List";
@@ -94,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				290E2F4529DC7DEF006A1049 /* NoListVC.swift */,
+				29CB478A29DE128A00E9C071 /* NoListViewModel.swift */,
 				290E2F4229DC7DB8006A1049 /* No LIst Custom Views */,
 			);
 			path = "No LIst";
@@ -122,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				290E2F4D29DC91BE006A1049 /* DetailViewController.swift */,
+				29CB478E29DE12DA00E9C071 /* DetailViewModel.swift */,
 				290E2F4F29DC9BDE006A1049 /* Detail View Custom Views */,
 			);
 			path = "Detail View";
@@ -317,6 +326,7 @@
 				29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */,
 				29CB478929DDD7FB00E9C071 /* NeedYesViewModel.swift in Sources */,
 				290E2F4429DC7DD0006A1049 /* NoListCollectionViewCell.swift in Sources */,
+				29CB478D29DE12AE00E9C071 /* YesListViewModel.swift in Sources */,
 				290E2F4B29DC8463006A1049 /* HomeViewController.swift in Sources */,
 				29DFF1B229DB337900096F47 /* FirebaseService.swift in Sources */,
 				290E2F4E29DC91BE006A1049 /* DetailViewController.swift in Sources */,
@@ -326,7 +336,9 @@
 				290E2F5129DC9C07006A1049 /* LogListCollectionViewCell.swift in Sources */,
 				290E2F3D29DC733E006A1049 /* YesListVC.swift in Sources */,
 				290E2F4629DC7DEF006A1049 /* NoListVC.swift in Sources */,
+				29CB478F29DE12DA00E9C071 /* DetailViewModel.swift in Sources */,
 				29DFF1BC29DB54E300096F47 /* ModelData.swift in Sources */,
+				29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */,
 				29DFF1BE29DB5AEF00096F47 /* MockData.swift in Sources */,
 				29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */,
 			);

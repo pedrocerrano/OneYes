@@ -32,6 +32,7 @@ extension QuoteAndNeedYesVC: UITextFieldDelegate {
         guard let yesNeeded = needYesTextField.text else { return false }
         needYesViewModel.save(needYesFor: yesNeeded)
         needYesTextField.resignFirstResponder()
+        needYesTextField.text?.removeAll()
         return true
     }
 }
