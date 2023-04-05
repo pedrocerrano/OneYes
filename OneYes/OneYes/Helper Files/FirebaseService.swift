@@ -23,10 +23,11 @@ struct FirebaseService {
     
     
     //MARK: - CRUD FUNCTIONS
-    func saveToFirestore(title: String, isCompleted: Bool, logs: [Log]) {
+    func saveToFirestore(title: String, logs: [Log]) {
         let uuid = UUID().uuidString
-        let affirmation = Affirmation(title: title, isCompleted: isCompleted, logs: logs, affirmationUUID: uuid)
-        ref.collection(Affirmation.AffirmationKey.collectionType).document(affirmation.affirmationUUID).setData(affirmation.affirmationDictionaryRepresentation)
+        let affirmation = Affirmation(title: title, logs: logs, affirmationUUID: uuid)
+        guard let deviceCollectionType = Affirmation.deviceCollectionType else { return }
+        ref.collection(deviceCollectionType).document(affirmation.affirmationUUID).setData(affirmation.affirmationDictionaryRepresentation)
     }
     
     func loadFromFirestore(completion: @escaping (Result<[Affirmation], FirebaseError>) -> Void) {

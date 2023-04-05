@@ -5,9 +5,11 @@
 //  Created by iMac Pro on 3/30/23.
 //
 
-import Foundation
+import UIKit
 
 class Affirmation {
+    
+    static let deviceCollectionType = UIDevice.current.identifierForVendor?.uuidString
     
     enum AffirmationKey {
         static let title           = "title"
@@ -23,7 +25,7 @@ class Affirmation {
     //MARK: - PROPERTIES
     var title: String
     let startDate: Date
-    let completedDate: Date
+    var completedDate: Date?
     var isCompleted: Bool
     var logs: [Log]
     let affirmationUUID: String
@@ -33,14 +35,15 @@ class Affirmation {
         [
             AffirmationKey.title            : self.title,
             AffirmationKey.startDate        : self.startDate.timeIntervalSince1970,
-            AffirmationKey.completedDate    : self.completedDate.timeIntervalSince1970,
+            AffirmationKey.completedDate    : self.completedDate?.timeIntervalSince1970,
             AffirmationKey.isCompleted      : self.isCompleted,
             AffirmationKey.logs             : self.logs.map { $0.logDictionaryRepresentation },
             AffirmationKey.affirmationUUID  : self.affirmationUUID
         ]
     }
     
-    init(title: String, startDate: Date = Date(), completedDate: Date = Date(), isCompleted: Bool, logs: [Log], affirmationUUID: String) {
+    
+    init(title: String, startDate: Date = Date(), completedDate: Date? = nil, isCompleted: Bool = false, logs: [Log], affirmationUUID: String) {
         self.title           = title
         self.startDate       = startDate
         self.completedDate   = completedDate
