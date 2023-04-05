@@ -47,7 +47,7 @@ extension NoListVC: UICollectionViewDataSource {
 //MARK: - EXT: CollectionViewDelegateFlowLayout
 extension NoListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = noListCollectionView.bounds.width
+        let width = noListCollectionView.frame.width
         return CGSize(width: width, height: Constants.CVCell.cellHeight)
     }
 } //: CV DelegateFlowLayout

@@ -47,7 +47,7 @@ extension YesListVC: UICollectionViewDataSource {
 //MARK: - EXT: CollectionViewDelegateFlowLayout
 extension YesListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = yesListCollectionView.bounds.width
+        let width = yesListCollectionView.frame.width
         return CGSize(width: width, height: Constants.CVCell.cellHeight)
     }
 } //: CV DelegateFlowLayout

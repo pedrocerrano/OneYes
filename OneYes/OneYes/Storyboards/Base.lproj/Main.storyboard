@@ -139,7 +139,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="347" height="50"/>
                                         <connections>
-                                            <segue destination="VKn-yb-ZrU" kind="show" id="sNK-Tn-ZdK"/>
+                                            <segue destination="VKn-yb-ZrU" kind="show" id="vtX-vf-DL4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -178,7 +178,7 @@
             <objects>
                 <viewController id="VKn-yb-ZrU" customClass="DetailViewController" customModule="OneYes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" ambiguous="YES" id="SEJ-Il-jFk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="194" translatesAutoresizingMaskIntoConstraints="NO" id="fSX-Yj-W8o">
@@ -205,7 +205,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1H-Wc-FcR">
-                                <rect key="frame" x="60" y="73" width="255" height="255"/>
+                                <rect key="frame" x="261" y="73" width="54" height="54"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i1H-Wc-FcR" secondAttribute="height" multiplier="1:1" id="49O-T8-dbV"/>
@@ -215,7 +215,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="NO!"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXu-23-Bw6">
-                                <rect key="frame" x="227.5" y="288" width="127.5" height="34.5"/>
+                                <rect key="frame" x="224" y="107" width="131" height="131.5"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qXu-23-Bw6" secondAttribute="height" multiplier="1:1" id="teH-mC-Yz9"/>
@@ -225,7 +225,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Yes!"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="mVg-ng-Ytc">
-                                <rect key="frame" x="20" y="342.5" width="335" height="20.5"/>
+                                <rect key="frame" x="20" y="258.5" width="335" height="20.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ftI-bA-bGf">
                                         <rect key="frame" x="0.0" y="0.0" width="97.5" height="20.5"/>
@@ -253,7 +253,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NgQ-Ve-0Gy">
-                                <rect key="frame" x="20" y="508" width="335" height="147"/>
+                                <rect key="frame" x="20" y="512" width="335" height="143"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d90-9S-JEZ">
                                     <size key="itemSize" width="335" height="67"/>
@@ -312,18 +312,22 @@
                             <constraint firstItem="NgQ-Ve-0Gy" firstAttribute="leading" secondItem="DTN-lA-1F0" secondAttribute="leading" constant="20" id="S3Z-dU-1zt"/>
                             <constraint firstItem="DTN-lA-1F0" firstAttribute="trailing" secondItem="qXu-23-Bw6" secondAttribute="trailing" constant="20" id="Vgn-cK-mz5"/>
                             <constraint firstItem="fSX-Yj-W8o" firstAttribute="leading" secondItem="DTN-lA-1F0" secondAttribute="leading" constant="20" id="bL7-E1-VfR"/>
-                            <constraint firstItem="qXu-23-Bw6" firstAttribute="top" secondItem="i1H-Wc-FcR" secondAttribute="bottom" constant="-40" id="ejA-F9-0kv"/>
+                            <constraint firstItem="qXu-23-Bw6" firstAttribute="top" secondItem="i1H-Wc-FcR" secondAttribute="bottom" constant="-20" id="ejA-F9-0kv"/>
                             <constraint firstItem="mVg-ng-Ytc" firstAttribute="top" secondItem="qXu-23-Bw6" secondAttribute="bottom" constant="20" id="ezd-Uh-7gc"/>
-                            <constraint firstItem="i1H-Wc-FcR" firstAttribute="leading" secondItem="DTN-lA-1F0" secondAttribute="leading" constant="60" id="gza-L3-hfy"/>
                             <constraint firstItem="DTN-lA-1F0" firstAttribute="trailing" secondItem="fSX-Yj-W8o" secondAttribute="trailing" constant="20" id="hbu-gF-4cP"/>
+                            <constraint firstItem="i1H-Wc-FcR" firstAttribute="centerX" secondItem="SEJ-Il-jFk" secondAttribute="centerX" id="lsN-nZ-YAv"/>
                             <constraint firstItem="fSX-Yj-W8o" firstAttribute="top" secondItem="DTN-lA-1F0" secondAttribute="top" id="txU-Vk-wi6"/>
                             <constraint firstItem="DTN-lA-1F0" firstAttribute="trailing" secondItem="NgQ-Ve-0Gy" secondAttribute="trailing" constant="20" id="wdM-NP-BMC"/>
                             <constraint firstItem="DTN-lA-1F0" firstAttribute="trailing" secondItem="x1Q-4M-JOr" secondAttribute="trailing" constant="20" id="zIj-lC-PlZ"/>
                             <constraint firstItem="DTN-lA-1F0" firstAttribute="trailing" secondItem="mVg-ng-Ytc" secondAttribute="trailing" constant="20" id="zJ8-sV-56C"/>
-                            <constraint firstItem="qXu-23-Bw6" firstAttribute="width" secondItem="i1H-Wc-FcR" secondAttribute="width" multiplier="0.5" id="zZR-kh-sbs"/>
+                            <constraint firstItem="qXu-23-Bw6" firstAttribute="width" secondItem="DTN-lA-1F0" secondAttribute="width" multiplier="0.35" id="zZR-kh-sbs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tBW-1T-K8e"/>
+                    <navigationItem key="navigationItem" id="tBW-1T-K8e">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Tkx-97-8Tm">
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="logListCollectionView" destination="NgQ-Ve-0Gy" id="1NF-tN-xmQ"/>
                         <outlet property="noButton" destination="i1H-Wc-FcR" id="xFy-AK-zMF"/>
@@ -332,7 +336,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRn-3Z-TGV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2737" y="158"/>
+            <point key="canvasLocation" x="2759" y="71"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="inC-Ty-T1L">
+            <objects>
+                <tabBarController id="aa1-vV-Pfl" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e5C-Gh-Bb5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlw-lc-2U0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1535" y="-770"/>
         </scene>
         <!--Quote And NeedVC-->
         <scene sceneID="vCD-x7-bbJ">
@@ -375,10 +393,11 @@
             </objects>
             <point key="canvasLocation" x="1868" y="-255"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="YEh-5v-4jg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RiO-nV-obI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="UmQ-CU-lhN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pgS-WP-N36">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -462,7 +481,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="351" height="50"/>
                                         <connections>
-                                            <segue destination="VKn-yb-ZrU" kind="show" id="5Xh-fs-hUx"/>
+                                            <segue destination="VKn-yb-ZrU" kind="show" id="NpE-sH-Bar"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -474,6 +493,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="PsX-tl-l2H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nMa-eA-fqa" firstAttribute="top" secondItem="VU1-qM-OkV" secondAttribute="bottom" constant="8" id="9gc-0M-wd3"/>
@@ -497,9 +517,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sNK-Tn-ZdK"/>
+        <segue reference="NpE-sH-Bar"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

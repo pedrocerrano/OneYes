@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
     
     //MARK: - FUNCTIONS
     func configureButtonUI() {
-        let noHeight                 = noButton.bounds.height
+        let noHeight                 = noButton.frame.height
         noButton.layer.cornerRadius  = noHeight/2
         noButton.layer.shadowColor   = Constants.DetailButtonUI.shadowColor
         noButton.layer.shadowOpacity = Constants.DetailButtonUI.shadowOpacity
@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
         noButton.layer.shadowOffset  = Constants.DetailButtonUI.shadowOffset
         noButton.layer.masksToBounds = Constants.DetailButtonUI.masksToBounds
         
-        let yesHeight                 = yesButton.bounds.height
+        let yesHeight                 = yesButton.frame.height
         yesButton.layer.cornerRadius  = yesHeight/2
         yesButton.layer.shadowColor   = Constants.DetailButtonUI.shadowColor
         yesButton.layer.shadowOpacity = Constants.DetailButtonUI.shadowOpacity
@@ -66,7 +66,7 @@ extension DetailViewController: UICollectionViewDataSource {
 //MARK: - EXT: CollectionViewDelegateFlowLayout
 extension DetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = logListCollectionView.bounds.width
+        let width = logListCollectionView.frame.width
         return CGSize(width: width, height: 32)
     }
 } //: CV DelegateFlowLayout
