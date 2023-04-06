@@ -13,15 +13,18 @@
 		290E2F4629DC7DEF006A1049 /* NoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F4529DC7DEF006A1049 /* NoListVC.swift */; };
 		290E2F4829DC7EEE006A1049 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F4729DC7EEE006A1049 /* Constants.swift */; };
 		290E2F4B29DC8463006A1049 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F4A29DC8463006A1049 /* HomeViewController.swift */; };
-		290E2F4E29DC91BE006A1049 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F4D29DC91BE006A1049 /* DetailViewController.swift */; };
-		290E2F5129DC9C07006A1049 /* LogListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F5029DC9C07006A1049 /* LogListCollectionViewCell.swift */; };
+		290E2F4E29DC91BE006A1049 /* NoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F4D29DC91BE006A1049 /* NoDetailViewController.swift */; };
+		290E2F5129DC9C07006A1049 /* NoDetailLogListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E2F5029DC9C07006A1049 /* NoDetailLogListCollectionViewCell.swift */; };
+		2927A3C029DF675400DB7F16 /* YesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2927A3BF29DF675400DB7F16 /* YesDetailViewController.swift */; };
+		2927A3C229DF73B800DB7F16 /* YesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2927A3C129DF73B800DB7F16 /* YesDetailViewModel.swift */; };
+		2927A3C529DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2927A3C429DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift */; };
 		29C0195629D5DE9F009EC687 /* quotesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 29C0195529D5DE9F009EC687 /* quotesData.json */; };
 		29C0196429D63B42009EC687 /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196329D63B42009EC687 /* Affirmation.swift */; };
 		29C0196629D63B77009EC687 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196529D63B77009EC687 /* Log.swift */; };
 		29CB478929DDD7FB00E9C071 /* NeedYesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478829DDD7FB00E9C071 /* NeedYesViewModel.swift */; };
 		29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478A29DE128A00E9C071 /* NoListViewModel.swift */; };
 		29CB478D29DE12AE00E9C071 /* YesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478C29DE12AE00E9C071 /* YesListViewModel.swift */; };
-		29CB478F29DE12DA00E9C071 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478E29DE12DA00E9C071 /* DetailViewModel.swift */; };
+		29CB478F29DE12DA00E9C071 /* NoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478E29DE12DA00E9C071 /* NoDetailViewModel.swift */; };
 		29CB479129DE1D3C00E9C071 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB479029DE1D3C00E9C071 /* DateFormatter.swift */; };
 		29DFF1AC29DB290300096F47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */; };
 		29DFF1AF29DB2A6100096F47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29DFF1AE29DB2A6100096F47 /* FirebaseFirestore */; };
@@ -44,15 +47,18 @@
 		290E2F4529DC7DEF006A1049 /* NoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoListVC.swift; sourceTree = "<group>"; };
 		290E2F4729DC7EEE006A1049 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		290E2F4A29DC8463006A1049 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		290E2F4D29DC91BE006A1049 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		290E2F5029DC9C07006A1049 /* LogListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListCollectionViewCell.swift; sourceTree = "<group>"; };
+		290E2F4D29DC91BE006A1049 /* NoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDetailViewController.swift; sourceTree = "<group>"; };
+		290E2F5029DC9C07006A1049 /* NoDetailLogListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDetailLogListCollectionViewCell.swift; sourceTree = "<group>"; };
+		2927A3BF29DF675400DB7F16 /* YesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesDetailViewController.swift; sourceTree = "<group>"; };
+		2927A3C129DF73B800DB7F16 /* YesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesDetailViewModel.swift; sourceTree = "<group>"; };
+		2927A3C429DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesDetailLogListCollectionViewCell.swift; sourceTree = "<group>"; };
 		29C0195529D5DE9F009EC687 /* quotesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotesData.json; sourceTree = "<group>"; };
 		29C0196329D63B42009EC687 /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
 		29C0196529D63B77009EC687 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		29CB478829DDD7FB00E9C071 /* NeedYesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedYesViewModel.swift; sourceTree = "<group>"; };
 		29CB478A29DE128A00E9C071 /* NoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoListViewModel.swift; sourceTree = "<group>"; };
 		29CB478C29DE12AE00E9C071 /* YesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesListViewModel.swift; sourceTree = "<group>"; };
-		29CB478E29DE12DA00E9C071 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		29CB478E29DE12DA00E9C071 /* NoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDetailViewModel.swift; sourceTree = "<group>"; };
 		29CB479029DE1D3C00E9C071 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29DFF1B129DB337900096F47 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
@@ -123,27 +129,47 @@
 				290E2F4A29DC8463006A1049 /* HomeViewController.swift */,
 				29DFF1B329DB4C1B00096F47 /* Quote and Need */,
 				290E2F4129DC7DA4006A1049 /* No LIst */,
+				290E2F4C29DC915C006A1049 /* No Detail View */,
 				290E2F3B29DC7306006A1049 /* Yes List */,
+				2927A3BE29DF672400DB7F16 /* Yes Detail View */,
 			);
 			path = "Home View";
 			sourceTree = "<group>";
 		};
-		290E2F4C29DC915C006A1049 /* Detail View */ = {
+		290E2F4C29DC915C006A1049 /* No Detail View */ = {
 			isa = PBXGroup;
 			children = (
-				290E2F4D29DC91BE006A1049 /* DetailViewController.swift */,
-				29CB478E29DE12DA00E9C071 /* DetailViewModel.swift */,
-				290E2F4F29DC9BDE006A1049 /* Detail View Custom Views */,
+				290E2F4D29DC91BE006A1049 /* NoDetailViewController.swift */,
+				29CB478E29DE12DA00E9C071 /* NoDetailViewModel.swift */,
+				290E2F4F29DC9BDE006A1049 /* No Detail View Custom Views */,
 			);
-			path = "Detail View";
+			path = "No Detail View";
 			sourceTree = "<group>";
 		};
-		290E2F4F29DC9BDE006A1049 /* Detail View Custom Views */ = {
+		290E2F4F29DC9BDE006A1049 /* No Detail View Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				290E2F5029DC9C07006A1049 /* LogListCollectionViewCell.swift */,
+				290E2F5029DC9C07006A1049 /* NoDetailLogListCollectionViewCell.swift */,
 			);
-			path = "Detail View Custom Views";
+			path = "No Detail View Custom Views";
+			sourceTree = "<group>";
+		};
+		2927A3BE29DF672400DB7F16 /* Yes Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				2927A3BF29DF675400DB7F16 /* YesDetailViewController.swift */,
+				2927A3C129DF73B800DB7F16 /* YesDetailViewModel.swift */,
+				2927A3C329DF73CE00DB7F16 /* Yes Detail Custom Views */,
+			);
+			path = "Yes Detail View";
+			sourceTree = "<group>";
+		};
+		2927A3C329DF73CE00DB7F16 /* Yes Detail Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				2927A3C429DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift */,
+			);
+			path = "Yes Detail Custom Views";
 			sourceTree = "<group>";
 		};
 		29C0195229D5DD12009EC687 /* Supporting Files */ = {
@@ -189,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				290E2F4929DC8453006A1049 /* Home View */,
-				290E2F4C29DC915C006A1049 /* Detail View */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -326,6 +351,8 @@
 				29C0196429D63B42009EC687 /* Affirmation.swift in Sources */,
 				29C0196629D63B77009EC687 /* Log.swift in Sources */,
 				29FA05A129D4913A00514F90 /* QuoteAndNeedYesVC.swift in Sources */,
+				2927A3C529DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift in Sources */,
+				2927A3C229DF73B800DB7F16 /* YesDetailViewModel.swift in Sources */,
 				29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */,
 				29CB478929DDD7FB00E9C071 /* NeedYesViewModel.swift in Sources */,
 				290E2F4429DC7DD0006A1049 /* NoListCollectionViewCell.swift in Sources */,
@@ -333,15 +360,16 @@
 				29CB478D29DE12AE00E9C071 /* YesListViewModel.swift in Sources */,
 				290E2F4B29DC8463006A1049 /* HomeViewController.swift in Sources */,
 				29DFF1B229DB337900096F47 /* FirebaseService.swift in Sources */,
-				290E2F4E29DC91BE006A1049 /* DetailViewController.swift in Sources */,
+				290E2F4E29DC91BE006A1049 /* NoDetailViewController.swift in Sources */,
 				290E2F4829DC7EEE006A1049 /* Constants.swift in Sources */,
 				290E2F4029DC7892006A1049 /* YesListCollectionViewCell.swift in Sources */,
 				29EAC17A29D73C30003EDB84 /* Quote.swift in Sources */,
-				290E2F5129DC9C07006A1049 /* LogListCollectionViewCell.swift in Sources */,
+				290E2F5129DC9C07006A1049 /* NoDetailLogListCollectionViewCell.swift in Sources */,
 				290E2F3D29DC733E006A1049 /* YesListVC.swift in Sources */,
 				290E2F4629DC7DEF006A1049 /* NoListVC.swift in Sources */,
 				29CB479129DE1D3C00E9C071 /* DateFormatter.swift in Sources */,
-				29CB478F29DE12DA00E9C071 /* DetailViewModel.swift in Sources */,
+				2927A3C029DF675400DB7F16 /* YesDetailViewController.swift in Sources */,
+				29CB478F29DE12DA00E9C071 /* NoDetailViewModel.swift in Sources */,
 				29DFF1BC29DB54E300096F47 /* ModelData.swift in Sources */,
 				29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */,
 				29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */,

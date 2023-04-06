@@ -36,11 +36,11 @@ class NoListVC: UIViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destinationVC = segue.destination as? DetailViewController else { return }
+        guard let destinationVC = segue.destination as? NoDetailViewController else { return }
         if segue.identifier == "toDetailViewController" {
             guard let index = noListCollectionView.indexPathsForSelectedItems?.first else { print("Issue with Segue to Detail VC") ; return }
             let affirmation = noListViewModel.affirmations[index.item]
-            destinationVC.detailViewModel = DetailViewModel(affirmation: affirmation)
+            destinationVC.noDetailViewModel = NoDetailViewModel(affirmation: affirmation)
         }
     }
 } //: CLASS
@@ -55,11 +55,7 @@ extension NoListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noListCell", for: indexPath) as? NoListCollectionViewCell else { return UICollectionViewCell() }
         
-        let sortedAffirmations = noListViewModel.affirmations.sorted {
-            $0.startDate > $1.startDate
-        }
-        
-        let affirmation = sortedAffirmations[indexPath.item]
+        let affirmation = noListViewModel.affirmations[indexPath.item]
         cell.configureUI(withAffirmation: affirmation)
         
         return cell

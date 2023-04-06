@@ -28,7 +28,11 @@ class NoListViewModel {
         service.loadFromFirestore { [weak self] result in
             switch result {
             case .success(let affirmations):
-                self?.affirmations = affirmations.filter ({ affirmation in
+                let sortedAffirmations = affirmations.sorted {
+                    $0.startDate > $1.startDate
+                }
+                
+                self?.affirmations = sortedAffirmations.filter ({ affirmation in
                     affirmation.isCompleted == false
                 })
                 self?.delegate?.dataLoadedSuccessfully()

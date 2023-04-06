@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  NoDetailViewController.swift
 //  OneYes
 //
 //  Created by iMac Pro on 4/4/23.
@@ -7,32 +7,32 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class NoDetailViewController: UIViewController {
 
     //MARK: - OUTLETS
     @IBOutlet weak var affirmationTitleLabel: UILabel!
     @IBOutlet weak var affirmationStartDateLabel: UILabel!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
-    @IBOutlet weak var logListCollectionView: UICollectionView!
+    @IBOutlet weak var noDetailLogListCollectionView: UICollectionView!
     
     
     //MARK: - PROPERTIES
-    var detailViewModel: DetailViewModel!
+    var noDetailViewModel: NoDetailViewModel!
     
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.logListCollectionView.dataSource = self
-        self.logListCollectionView.delegate   = self
+        self.noDetailLogListCollectionView.dataSource = self
+        self.noDetailLogListCollectionView.delegate   = self
         
         configureUI()
     }
     
     //MARK: - FUNCTIONS
     func configureUI() {
-        guard let affirmation = detailViewModel.affirmation else { return }
+        guard let affirmation = noDetailViewModel.affirmation else { return }
         affirmationTitleLabel.text     = affirmation.title
         affirmationStartDateLabel.text = affirmation.startDate.stringValue()
         
@@ -44,13 +44,13 @@ class DetailViewController: UIViewController {
 
 
 //MARK: - EXT: CollectionView DataSource
-extension DetailViewController: UICollectionViewDataSource {
+extension NoDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "logListCell", for: indexPath) as? LogListCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noDetailLogListCell", for: indexPath) as? NoDetailLogListCollectionViewCell else { return UICollectionViewCell() }
         
         
         return cell
@@ -59,9 +59,9 @@ extension DetailViewController: UICollectionViewDataSource {
 
 
 //MARK: - EXT: CollectionViewDelegateFlowLayout
-extension DetailViewController: UICollectionViewDelegateFlowLayout {
+extension NoDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = logListCollectionView.frame.width
+        let width = noDetailLogListCollectionView.frame.width
         return CGSize(width: width, height: 32)
     }
 } //: CV DelegateFlowLayout

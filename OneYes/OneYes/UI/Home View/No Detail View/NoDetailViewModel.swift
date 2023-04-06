@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DetailViewModel {
+struct NoDetailViewModel {
     
     //MARK: - PROPERTIES
     var affirmation: Affirmation?
