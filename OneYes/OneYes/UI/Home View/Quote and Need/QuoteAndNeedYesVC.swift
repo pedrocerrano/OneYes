@@ -21,7 +21,6 @@ class QuoteAndNeedYesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         needYesTextField.delegate = self
-        needYesViewModel = NeedYesViewModel(delegate: self)
     }
 } //: CLASS
 
@@ -33,14 +32,9 @@ extension QuoteAndNeedYesVC: UITextFieldDelegate {
         needYesViewModel.save(needYesFor: yesNeeded)
         needYesTextField.resignFirstResponder()
         needYesTextField.text?.removeAll()
+
         return true
     }
 } //: TextFieldDelegate
 
-//MARK: - ViewModelDelegate
-extension QuoteAndNeedYesVC: NeedYesViewModelDelegate {
-    func newNeedYesCreated() {
-        //
-    }
-} //: ViewModelDelegate
 

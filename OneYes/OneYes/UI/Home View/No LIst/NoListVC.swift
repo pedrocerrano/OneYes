@@ -55,7 +55,11 @@ extension NoListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noListCell", for: indexPath) as? NoListCollectionViewCell else { return UICollectionViewCell() }
         
-        let affirmation = noListViewModel.affirmations[indexPath.item]
+        let sortedAffirmations = noListViewModel.affirmations.sorted {
+            $0.startDate > $1.startDate
+        }
+        
+        let affirmation = sortedAffirmations[indexPath.item]
         cell.configureUI(withAffirmation: affirmation)
         
         return cell
@@ -79,10 +83,3 @@ extension NoListVC: NoListViewModelDelegate {
     }
 } //: NoListViewModelDelegate
 
-
-//MARK: - NeedYesViewModelDelegate
-extension NoListVC: NeedYesViewModelDelegate {
-    func newNeedYesCreated() {
-        noListCollectionView.reloadData()
-    }
-} //: NeedYesViewModelDelegate
