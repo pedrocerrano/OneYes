@@ -20,18 +20,19 @@ struct FirebaseService {
     
     //MARK: - PROPERTIES
     let ref = Firestore.firestore()
-    
+    let deviceCollectionType = Constants.Firebase.deviceCollectionType
     
     //MARK: - CRUD FUNCTIONS
     func saveToFirestore(title: String, logs: [Log]) {
         let uuid = UUID().uuidString
         let affirmation = Affirmation(title: title, logs: logs, affirmationUUID: uuid)
-        guard let deviceCollectionType = Affirmation.deviceCollectionType else { return }
+        guard let deviceCollectionType else { return }
         ref.collection(deviceCollectionType).document(affirmation.affirmationUUID).setData(affirmation.affirmationDictionaryRepresentation)
     }
     
     func loadFromFirestore(completion: @escaping (Result<[Affirmation], FirebaseError>) -> Void) {
-        ref.collection(Affirmation.AffirmationKey.collectionType).getDocuments { snapshot, error in
+        guard let deviceCollectionType else { return }
+        ref.collection(deviceCollectionType).getDocuments { snapshot, error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(.failure(.firebaseError(error)))
@@ -46,7 +47,8 @@ struct FirebaseService {
     }
     
     func deleteFromFirestore(from affirmation: Affirmation) {
-        ref.collection(Affirmation.AffirmationKey.collectionType).document(affirmation.affirmationUUID).delete()
+        guard let deviceCollectionType else { return }
+        ref.collection(deviceCollectionType).document(affirmation.affirmationUUID).delete()
     }
     
 }

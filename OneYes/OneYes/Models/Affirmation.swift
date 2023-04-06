@@ -9,8 +9,6 @@ import UIKit
 
 class Affirmation {
     
-    static let deviceCollectionType = UIDevice.current.identifierForVendor?.uuidString
-    
     enum AffirmationKey {
         static let title           = "title"
         static let startDate       = "startDate"
@@ -18,8 +16,6 @@ class Affirmation {
         static let isCompleted     = "isCompleted"
         static let logs            = "logs"
         static let affirmationUUID = "affirmationUUID"
-        
-        static let collectionType  = "userAffirmations"
     }
     
     //MARK: - PROPERTIES
@@ -59,7 +55,6 @@ extension Affirmation {
     convenience init?(fromAffirmationDictionary affirmationDictionary: [String : Any ]) {
         guard let title            = affirmationDictionary[AffirmationKey.title] as? String,
               let startDate        = affirmationDictionary[AffirmationKey.startDate] as? Double,
-              let completedDate    = affirmationDictionary[AffirmationKey.completedDate] as? Double,
               let isCompleted      = affirmationDictionary[AffirmationKey.isCompleted] as? Bool,
               let logsDictionaries = affirmationDictionary[AffirmationKey.logs] as? [[String : AnyHashable]],
               let affirmationUUID  = affirmationDictionary[AffirmationKey.affirmationUUID] as? String else {
@@ -67,7 +62,8 @@ extension Affirmation {
             return nil
         }
         
-        var logsArray = logsDictionaries.compactMap { Log(fromLogDictionary: $0) }
+        let completedDate = affirmationDictionary[AffirmationKey.completedDate] as? Double ?? 0
+        var logsArray   = logsDictionaries.compactMap { Log(fromLogDictionary: $0) }
         
         self.init(title: title, startDate: Date(timeIntervalSince1970: startDate), completedDate: Date(timeIntervalSince1970: completedDate), isCompleted: isCompleted, logs: logsArray, affirmationUUID: affirmationUUID)
     }

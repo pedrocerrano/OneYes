@@ -9,6 +9,10 @@ import UIKit
 
 struct Constants {
     
+    struct Firebase {
+        static let deviceCollectionType = UIDevice.current.identifierForVendor?.uuidString
+    }
+    
     struct CVCell {
         static let cellHeight: Double = 45
     }

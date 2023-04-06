@@ -22,12 +22,13 @@
 		29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478A29DE128A00E9C071 /* NoListViewModel.swift */; };
 		29CB478D29DE12AE00E9C071 /* YesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478C29DE12AE00E9C071 /* YesListViewModel.swift */; };
 		29CB478F29DE12DA00E9C071 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478E29DE12DA00E9C071 /* DetailViewModel.swift */; };
+		29CB479129DE1D3C00E9C071 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB479029DE1D3C00E9C071 /* DateFormatter.swift */; };
 		29DFF1AC29DB290300096F47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */; };
 		29DFF1AF29DB2A6100096F47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29DFF1AE29DB2A6100096F47 /* FirebaseFirestore */; };
 		29DFF1B229DB337900096F47 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFF1B129DB337900096F47 /* FirebaseService.swift */; };
 		29DFF1BC29DB54E300096F47 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFF1BB29DB54E300096F47 /* ModelData.swift */; };
-		29DFF1BE29DB5AEF00096F47 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFF1BD29DB5AEF00096F47 /* MockData.swift */; };
 		29EAC17A29D73C30003EDB84 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EAC17929D73C30003EDB84 /* Quote.swift */; };
+		29F2066729DF2F9600B3ABA1 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F2066629DF2F9600B3ABA1 /* UIElements.swift */; };
 		29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA059C29D4913A00514F90 /* AppDelegate.swift */; };
 		29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA059E29D4913A00514F90 /* SceneDelegate.swift */; };
 		29FA05A129D4913A00514F90 /* QuoteAndNeedYesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA05A029D4913A00514F90 /* QuoteAndNeedYesVC.swift */; };
@@ -52,11 +53,12 @@
 		29CB478A29DE128A00E9C071 /* NoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoListViewModel.swift; sourceTree = "<group>"; };
 		29CB478C29DE12AE00E9C071 /* YesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesListViewModel.swift; sourceTree = "<group>"; };
 		29CB478E29DE12DA00E9C071 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		29CB479029DE1D3C00E9C071 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29DFF1B129DB337900096F47 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		29DFF1BB29DB54E300096F47 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		29DFF1BD29DB5AEF00096F47 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		29EAC17929D73C30003EDB84 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		29F2066629DF2F9600B3ABA1 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
 		29FA059929D4913A00514F90 /* OneYes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneYes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FA059C29D4913A00514F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29FA059E29D4913A00514F90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,7 +181,6 @@
 				29C0196329D63B42009EC687 /* Affirmation.swift */,
 				29C0196529D63B77009EC687 /* Log.swift */,
 				29EAC17929D73C30003EDB84 /* Quote.swift */,
-				29DFF1BD29DB5AEF00096F47 /* MockData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +199,8 @@
 			children = (
 				29DFF1B129DB337900096F47 /* FirebaseService.swift */,
 				290E2F4729DC7EEE006A1049 /* Constants.swift */,
+				29CB479029DE1D3C00E9C071 /* DateFormatter.swift */,
+				29F2066629DF2F9600B3ABA1 /* UIElements.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */,
 				29CB478929DDD7FB00E9C071 /* NeedYesViewModel.swift in Sources */,
 				290E2F4429DC7DD0006A1049 /* NoListCollectionViewCell.swift in Sources */,
+				29F2066729DF2F9600B3ABA1 /* UIElements.swift in Sources */,
 				29CB478D29DE12AE00E9C071 /* YesListViewModel.swift in Sources */,
 				290E2F4B29DC8463006A1049 /* HomeViewController.swift in Sources */,
 				29DFF1B229DB337900096F47 /* FirebaseService.swift in Sources */,
@@ -336,10 +340,10 @@
 				290E2F5129DC9C07006A1049 /* LogListCollectionViewCell.swift in Sources */,
 				290E2F3D29DC733E006A1049 /* YesListVC.swift in Sources */,
 				290E2F4629DC7DEF006A1049 /* NoListVC.swift in Sources */,
+				29CB479129DE1D3C00E9C071 /* DateFormatter.swift in Sources */,
 				29CB478F29DE12DA00E9C071 /* DetailViewModel.swift in Sources */,
 				29DFF1BC29DB54E300096F47 /* ModelData.swift in Sources */,
 				29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */,
-				29DFF1BE29DB5AEF00096F47 /* MockData.swift in Sources */,
 				29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,14 +7,20 @@
 
 import Foundation
 
+protocol NoListViewModelDelegate: AnyObject {
+    func dataLoadedSuccessfully()
+}
+
 class NoListViewModel {
     
     //MARK: - PROPERTIES
     var affirmations: [Affirmation] = []
     var service: FirebaseService
+    private weak var delegate: NoListViewModelDelegate?
     
-    init(service: FirebaseService = FirebaseService()) {
-        self.service = service
+    init(service: FirebaseService = FirebaseService(), delegate: NoListViewModelDelegate) {
+        self.service  = service
+        self.delegate = delegate
     }
     
     //MARK: - FUNCTIONS
@@ -22,7 +28,10 @@ class NoListViewModel {
         service.loadFromFirestore { [weak self] result in
             switch result {
             case .success(let affirmations):
-                self?.affirmations = affirmations
+                self?.affirmations = affirmations.filter ({ affirmation in
+                    affirmation.isCompleted == false
+                })
+                self?.delegate?.dataLoadedSuccessfully()
             case .failure(let error):
                 print(error.localizedDescription)
             }

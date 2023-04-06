@@ -11,33 +11,52 @@ class NoListVC: UIViewController {
 
     //MARK: - OUTLETS
     @IBOutlet weak var noListCollectionView: UICollectionView!
+    @IBOutlet weak var noListTitleLabel: UILabel!
+    @IBOutlet weak var noListStartDateLabel: UILabel!
+    @IBOutlet weak var noListLogCountLabel: UILabel!
+    
+    
+    //MARK: - PROPERTIES
+    var noListViewModel: NoListViewModel!
     
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.noListCollectionView.dataSource = self
-        self.noListCollectionView.delegate   = self
-
+        noListCollectionView.dataSource = self
+        noListCollectionView.delegate   = self
+        noListViewModel = NoListViewModel(delegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        noListViewModel.loadAffirmations()
     }
     
 
     // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? DetailViewController else { return }
+        if segue.identifier == "toDetailViewController" {
+            guard let index = noListCollectionView.indexPathsForSelectedItems?.first else { print("Issue with Segue to Detail VC") ; return }
+            let affirmation = noListViewModel.affirmations[index.item]
+            destinationVC.detailViewModel = DetailViewModel(affirmation: affirmation)
+        }
+    }
 } //: CLASS
 
 
 //MARK: - EXT: CollectionView DataSource
 extension NoListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return noListViewModel.affirmations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noListCell", for: indexPath) as? NoListCollectionViewCell else { return UICollectionViewCell() }
         
+        let affirmation = noListViewModel.affirmations[indexPath.item]
+        cell.configureUI(withAffirmation: affirmation)
         
         return cell
     }
@@ -51,3 +70,19 @@ extension NoListVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: Constants.CVCell.cellHeight)
     }
 } //: CV DelegateFlowLayout
+
+
+//MARK: - NoListViewModelDelegate
+extension NoListVC: NoListViewModelDelegate {
+    func dataLoadedSuccessfully() {
+        noListCollectionView.reloadData()
+    }
+} //: NoListViewModelDelegate
+
+
+//MARK: - NeedYesViewModelDelegate
+extension NoListVC: NeedYesViewModelDelegate {
+    func newNeedYesCreated() {
+        noListCollectionView.reloadData()
+    }
+} //: NeedYesViewModelDelegate

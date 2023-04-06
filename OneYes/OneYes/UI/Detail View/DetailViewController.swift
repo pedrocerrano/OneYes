@@ -10,10 +10,15 @@ import UIKit
 class DetailViewController: UIViewController {
 
     //MARK: - OUTLETS
-    
+    @IBOutlet weak var affirmationTitleLabel: UILabel!
+    @IBOutlet weak var affirmationStartDateLabel: UILabel!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var logListCollectionView: UICollectionView!
+    
+    
+    //MARK: - PROPERTIES
+    var detailViewModel: DetailViewModel!
     
     
     //MARK: - LIFECYCLE
@@ -22,30 +27,20 @@ class DetailViewController: UIViewController {
         self.logListCollectionView.dataSource = self
         self.logListCollectionView.delegate   = self
         
-        configureButtonUI()
+        configureUI()
     }
     
     //MARK: - FUNCTIONS
-    func configureButtonUI() {
-        let noHeight                 = noButton.frame.height
-        noButton.layer.cornerRadius  = noHeight/2
-        noButton.layer.shadowColor   = Constants.DetailButtonUI.shadowColor
-        noButton.layer.shadowOpacity = Constants.DetailButtonUI.shadowOpacity
-        noButton.layer.shadowRadius  = Constants.DetailButtonUI.shadowRadius
-        noButton.layer.shadowOffset  = Constants.DetailButtonUI.shadowOffset
-        noButton.layer.masksToBounds = Constants.DetailButtonUI.masksToBounds
+    func configureUI() {
+        guard let affirmation = detailViewModel.affirmation else { return }
+        affirmationTitleLabel.text     = affirmation.title
+        affirmationStartDateLabel.text = affirmation.startDate.stringValue()
         
-        let yesHeight                 = yesButton.frame.height
-        yesButton.layer.cornerRadius  = yesHeight/2
-        yesButton.layer.shadowColor   = Constants.DetailButtonUI.shadowColor
-        yesButton.layer.shadowOpacity = Constants.DetailButtonUI.shadowOpacity
-        yesButton.layer.shadowRadius  = Constants.DetailButtonUI.shadowRadius
-        yesButton.layer.shadowOffset  = Constants.DetailButtonUI.shadowOffset
-        yesButton.layer.masksToBounds = Constants.DetailButtonUI.masksToBounds
+        UIElements.configureButton(for: noButton)
+        UIElements.configureButton(for: yesButton)
     }
     
 } //: CLASS
-
 
 
 //MARK: - EXT: CollectionView DataSource
