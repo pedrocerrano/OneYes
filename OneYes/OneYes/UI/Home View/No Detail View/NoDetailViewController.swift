@@ -10,8 +10,8 @@ import UIKit
 class NoDetailViewController: UIViewController {
 
     //MARK: - OUTLETS
-    @IBOutlet weak var affirmationTitleLabel: UILabel!
-    @IBOutlet weak var affirmationStartDateLabel: UILabel!
+    @IBOutlet weak var reasonTitleLabel: UILabel!
+    @IBOutlet weak var reasonStartDateLabel: UILabel!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noDetailLogListCollectionView: UICollectionView!
@@ -32,9 +32,9 @@ class NoDetailViewController: UIViewController {
     
     //MARK: - FUNCTIONS
     func configureUI() {
-        guard let affirmation = noDetailViewModel.affirmation else { return }
-        affirmationTitleLabel.text     = affirmation.title
-        affirmationStartDateLabel.text = affirmation.startDate.stringValue()
+        guard let reason = noDetailViewModel.reason else { return }
+        reasonTitleLabel.text     = reason.title
+        reasonStartDateLabel.text = reason.startDate.stringValue()
         
         UIElements.configureButton(for: noButton)
         UIElements.configureButton(for: yesButton)

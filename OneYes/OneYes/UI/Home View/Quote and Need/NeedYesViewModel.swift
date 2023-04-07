@@ -7,19 +7,26 @@
 
 import Foundation
 
+protocol NeedYesViewModelDelegate: AnyObject {
+    func newlyCreatedReason()
+}
+
 struct NeedYesViewModel {
     
     //MARK: - PROPERTIES
-    var affirmation: Affirmation?
+    var reason: Reason?
     let service: FirebaseService
-    
-    init(affirmation: Affirmation? = nil, service: FirebaseService = FirebaseService()) {
-        self.affirmation = affirmation
-        self.service     = service
+    private weak var delegate: NeedYesViewModelDelegate?
+        
+    init(reason: Reason? = nil, service: FirebaseService = FirebaseService(), delegate: NeedYesViewModelDelegate) {
+        self.reason   = reason
+        self.service  = service
+        self.delegate = delegate
     }
     
     //MARK: - FUNCTIONS
-    func save(needYesFor affirmationTitle: String, logs: [Log] = []) {
-        service.saveToFirestore(title: affirmationTitle, logs: logs)
+    func save(needYesFor reasonTitle: String, logs: [Log] = []) {
+        service.saveToFirestore(title: reasonTitle, logs: logs)
+        delegate?.newlyCreatedReason()
     }
 }

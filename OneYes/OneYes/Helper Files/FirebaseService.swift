@@ -8,13 +8,11 @@
 import Foundation
 import FirebaseFirestore
 
-
 enum FirebaseError: Error {
     case firebaseError(Error)
     case unableToDecode
     case noDataFound
 }
-
 
 struct FirebaseService {
     
@@ -24,13 +22,13 @@ struct FirebaseService {
     
     //MARK: - CRUD FUNCTIONS
     func saveToFirestore(title: String, logs: [Log]) {
-        let uuid = UUID().uuidString
-        let affirmation = Affirmation(title: title, logs: logs, affirmationUUID: uuid)
+        let uuid   = UUID().uuidString
+        let reason = Reason(title: title, logs: logs, reasonUUID: uuid)
         guard let deviceCollectionType else { return }
-        ref.collection(deviceCollectionType).document(affirmation.affirmationUUID).setData(affirmation.affirmationDictionaryRepresentation)
+        ref.collection(deviceCollectionType).document(reason.reasonUUID).setData(reason.reasonDictionaryRepresentation)
     }
     
-    func loadFromFirestore(completion: @escaping (Result<[Affirmation], FirebaseError>) -> Void) {
+    func loadFromFirestore(completion: @escaping (Result<[Reason], FirebaseError>) -> Void) {
         guard let deviceCollectionType else { return }
         ref.collection(deviceCollectionType).getDocuments { snapshot, error in
             if let error = error {
@@ -40,15 +38,15 @@ struct FirebaseService {
             }
             
             guard let data = snapshot?.documents else { completion(.failure(.noDataFound)) ; return }
-            let affirmationDictArray = data.compactMap { $0.data() }
-            let affirmations = affirmationDictArray.compactMap { Affirmation(fromAffirmationDictionary: $0) }
-            completion(.success(affirmations))
+            let reasonDictArray = data.compactMap { $0.data() }
+            let reasons = reasonDictArray.compactMap { Reason(fromReasonDictionary: $0) }
+            completion(.success(reasons))
         }
     }
     
-    func deleteFromFirestore(from affirmation: Affirmation) {
+    func deleteFromFirestore(from reason: Reason) {
         guard let deviceCollectionType else { return }
-        ref.collection(deviceCollectionType).document(affirmation.affirmationUUID).delete()
+        ref.collection(deviceCollectionType).document(reason.reasonUUID).delete()
     }
     
 }

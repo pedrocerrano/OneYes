@@ -18,7 +18,7 @@ class NoListVC: UIViewController {
     
     //MARK: - PROPERTIES
     var noListViewModel: NoListViewModel!
-    
+//    weak var newNeedDelegate: NeedYesViewModelDelegate?
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class NoListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        noListViewModel.loadAffirmations()
+        noListViewModel.loadReasons()
     }
     
 
@@ -39,8 +39,8 @@ class NoListVC: UIViewController {
         guard let destinationVC = segue.destination as? NoDetailViewController else { return }
         if segue.identifier == "toDetailViewController" {
             guard let index = noListCollectionView.indexPathsForSelectedItems?.first else { print("Issue with Segue to Detail VC") ; return }
-            let affirmation = noListViewModel.affirmations[index.item]
-            destinationVC.noDetailViewModel = NoDetailViewModel(affirmation: affirmation)
+            let reason      = noListViewModel.reason[index.item]
+            destinationVC.noDetailViewModel = NoDetailViewModel(reason: reason)
         }
     }
 } //: CLASS
@@ -49,14 +49,14 @@ class NoListVC: UIViewController {
 //MARK: - EXT: CollectionView DataSource
 extension NoListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return noListViewModel.affirmations.count
+        return noListViewModel.reason.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noListCell", for: indexPath) as? NoListCollectionViewCell else { return UICollectionViewCell() }
         
-        let affirmation = noListViewModel.affirmations[indexPath.item]
-        cell.configureUI(withAffirmation: affirmation)
+        let reason = noListViewModel.reason[indexPath.item]
+        cell.configureUI(withReason: reason)
         
         return cell
     }
@@ -79,3 +79,11 @@ extension NoListVC: NoListViewModelDelegate {
     }
 } //: NoListViewModelDelegate
 
+
+//MARK: - NeedYesViewModelDelegate
+extension NoListVC: NeedYesViewModelDelegate {
+    func newlyCreatedReason() {
+        noListViewModel.loadReasons()
+        noListCollectionView.reloadData()
+    }
+}

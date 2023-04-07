@@ -10,9 +10,9 @@ import Foundation
 struct NoDetailViewModel {
     
     //MARK: - PROPERTIES
-    var affirmation: Affirmation?
+    var reason: Reason?
     
-    init(affirmation: Affirmation? = nil) {
-        self.affirmation = affirmation
+    init(reason: Reason? = nil) {
+        self.reason = reason
     }
 }

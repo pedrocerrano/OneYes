@@ -14,7 +14,7 @@ protocol NoListViewModelDelegate: AnyObject {
 class NoListViewModel {
     
     //MARK: - PROPERTIES
-    var affirmations: [Affirmation] = []
+    var reason: [Reason] = []
     var service: FirebaseService
     private weak var delegate: NoListViewModelDelegate?
     
@@ -24,16 +24,16 @@ class NoListViewModel {
     }
     
     //MARK: - FUNCTIONS
-    func loadAffirmations() {
+    func loadReasons() {
         service.loadFromFirestore { [weak self] result in
             switch result {
-            case .success(let affirmations):
-                let sortedAffirmations = affirmations.sorted {
+            case .success(let reasons):
+                let sortedReasons = reasons.sorted {
                     $0.startDate > $1.startDate
                 }
                 
-                self?.affirmations = sortedAffirmations.filter ({ affirmation in
-                    affirmation.isCompleted == false
+                self?.reason = sortedReasons.filter ({ reason in
+                    reason.isCompleted == false
                 })
                 self?.delegate?.dataLoadedSuccessfully()
             case .failure(let error):

@@ -16,10 +16,10 @@ class NoListCollectionViewCell: UICollectionViewCell {
     
     
     //MARK: - FUNCTIONS
-    func configureUI(withAffirmation affirmation: Affirmation) {
-        noListTitleLabel.text     = affirmation.title
-        noListStartDateLabel.text = affirmation.startDate.stringValue()
-        noListLogCountLabel.text  = "\(affirmation.logs.count)"
+    func configureUI(withReason reason: Reason) {
+        noListTitleLabel.text     = reason.title
+        noListStartDateLabel.text = reason.startDate.stringValue()
+        noListLogCountLabel.text  = "\(reason.logs.count)"
     }
     
 }

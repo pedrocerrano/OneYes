@@ -41,8 +41,8 @@ class Log {
 extension Log {
     convenience init?(fromLogDictionary logDictionary: [String : Any]) {
         guard let logTitle = logDictionary[LogKey.logTitle] as? String,
-              let logDate = logDictionary[LogKey.logDate] as? Double,
-              let logUUID = logDictionary[LogKey.logUUID] as? String else {
+              let logDate  = logDictionary[LogKey.logDate] as? Double,
+              let logUUID  = logDictionary[LogKey.logUUID] as? String else {
             print("Failed to initialize Log Model object")
             return nil
         }

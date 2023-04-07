@@ -332,10 +332,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="affirmationStartDateLabel" destination="qEo-sn-em1" id="lwk-DJ-CB2"/>
-                        <outlet property="affirmationTitleLabel" destination="x1Q-4M-JOr" id="jUh-u7-J7h"/>
                         <outlet property="noButton" destination="i1H-Wc-FcR" id="xFy-AK-zMF"/>
                         <outlet property="noDetailLogListCollectionView" destination="NgQ-Ve-0Gy" id="1NF-tN-xmQ"/>
+                        <outlet property="reasonStartDateLabel" destination="qEo-sn-em1" id="lwk-DJ-CB2"/>
+                        <outlet property="reasonTitleLabel" destination="x1Q-4M-JOr" id="jUh-u7-J7h"/>
                         <outlet property="yesButton" destination="qXu-23-Bw6" id="qr1-Ud-lty"/>
                     </connections>
                 </viewController>
