@@ -11,8 +11,18 @@ struct NoDetailViewModel {
     
     //MARK: - PROPERTIES
     var reason: Reason?
+    let service: FirebaseService
     
-    init(reason: Reason? = nil) {
-        self.reason = reason
+    init(reason: Reason? = nil, service: FirebaseService = FirebaseService()) {
+        self.reason  = reason
+        self.service = service
+    }
+    
+    
+    //MARK: - FUNCTIONS
+    func saveNewLog(logTitle: String) {
+        if let reason = reason {
+            service.saveNewLogToFirestore(forReason: reason, withLogTitle: logTitle)
+        }
     }
 }

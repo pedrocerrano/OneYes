@@ -12,12 +12,12 @@ class NoDetailLogListCollectionViewCell: UICollectionViewCell {
     //MARK: - OUTLETS
     @IBOutlet weak var noLogTitleLabel: UILabel!
     @IBOutlet weak var noLogDateLabel: UILabel!
-    
-    
-    //MARK: - PROPERTIES
-    
+      
     
     //MARK: - FUNCTIONS
-    
+    func configureUI(withLog log: Log) {
+        noLogTitleLabel.text = log.logTitle
+        noLogDateLabel.text  = log.logDate.stringValue()
+    }
     
 }

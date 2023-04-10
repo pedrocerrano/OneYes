@@ -25,8 +25,8 @@ struct NeedYesViewModel {
     }
     
     //MARK: - FUNCTIONS
-    func save(needYesFor reasonTitle: String, logs: [Log] = []) {
-        service.saveToFirestore(title: reasonTitle, logs: logs)
+    func saveNewReason(needYesFor reasonTitle: String, logs: [Log] = []) {
+        service.saveNewReasonToFirestore(title: reasonTitle, logs: logs)
         delegate?.newlyCreatedReason()
     }
 }

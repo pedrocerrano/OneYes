@@ -25,7 +25,7 @@ class NoListViewModel {
     
     //MARK: - FUNCTIONS
     func loadReasons() {
-        service.loadFromFirestore { [weak self] result in
+        service.loadReasonsFromFirestore { [weak self] result in
             switch result {
             case .success(let reasons):
                 let sortedReasons = reasons.sorted {

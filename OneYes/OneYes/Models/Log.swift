@@ -29,7 +29,7 @@ class Log {
     }
     
     
-    init(logTitle: String, logDate: Date = Date(), logUUID: String = UUID().uuidString) {
+    init(logTitle: String, logDate: Date = Date(), logUUID: String) {
         self.logTitle = logTitle
         self.logDate  = logDate
         self.logUUID  = logUUID

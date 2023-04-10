@@ -30,7 +30,7 @@ class QuoteAndNeedYesVC: UIViewController {
 extension QuoteAndNeedYesVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let yesNeeded = needYesTextField.text else { return false }
-        needYesViewModel.save(needYesFor: yesNeeded)
+        needYesViewModel.saveNewReason(needYesFor: yesNeeded)
         needYesTextField.resignFirstResponder()
         needYesTextField.text?.removeAll()
         return true

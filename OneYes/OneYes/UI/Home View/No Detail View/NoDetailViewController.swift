@@ -50,6 +50,7 @@ class NoDetailViewController: UIViewController {
         guard let reason = noDetailViewModel.reason else { return }
         reasonTitleLabel.text     = reason.title
         reasonStartDateLabel.text = reason.startDate.stringValue()
+        noLogCountLabel.text      = "(\(reason.logs.count))"
         
         UIElements.configureButton(for: noButton)
         UIElements.configureButton(for: yesButton)
@@ -65,8 +66,8 @@ class NoDetailViewController: UIViewController {
         
         let dismissAction     = UIAlertAction(title: "Cancel", style: .cancel)
         let confirmNoAction   = UIAlertAction(title: "Really.", style: .default) { _ in
-            #warning("NO ALERT: Add textField input to Log entry")
-            print("No Button Pressed Confirmed. Boohoo.")
+            guard let textField = noAlertController.textFields?.first else { return }
+            self.noDetailViewModel.saveNewLog(logTitle: textField.text ?? "Quick No")
         }
         
         noAlertController.addAction(dismissAction)
@@ -95,12 +96,15 @@ class NoDetailViewController: UIViewController {
 //MARK: - EXT: CollectionView DataSource
 extension NoDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return noDetailViewModel.reason?.logs.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noDetailLogListCell", for: indexPath) as? NoDetailLogListCollectionViewCell else { return UICollectionViewCell() }
         
+        if let log = noDetailViewModel.reason?.logs[indexPath.item] {
+            cell.configureUI(withLog: log)
+        }
         
         return cell
     }

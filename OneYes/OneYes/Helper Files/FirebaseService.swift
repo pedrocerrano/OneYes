@@ -21,14 +21,23 @@ struct FirebaseService {
     let deviceCollectionType = Constants.Firebase.deviceCollectionType
     
     //MARK: - CRUD FUNCTIONS
-    func saveToFirestore(title: String, logs: [Log]) {
+    func saveNewReasonToFirestore(title: String, logs: [Log]) {
         let uuid   = UUID().uuidString
         let reason = Reason(title: title, logs: logs, reasonUUID: uuid)
         guard let deviceCollectionType else { return }
         ref.collection(deviceCollectionType).document(reason.reasonUUID).setData(reason.reasonDictionaryRepresentation)
     }
     
-    func loadFromFirestore(completion: @escaping (Result<[Reason], FirebaseError>) -> Void) {
+    func saveNewLogToFirestore(forReason: Reason, withLogTitle logTitle: String) {
+        guard let deviceCollectionType else { return }
+        let logUUID = UUID().uuidString
+        let log     = Log(logTitle: logTitle, logUUID: logUUID)
+//        ref.collection(deviceCollectionType).document(forReason.reasonUUID).updateData(["logs": [log.logUUID : log.logDictionaryRepresentation]])
+//        ref.collection(deviceCollectionType).document(forReason.reasonUUID).updateData(["logs": FieldValue.arrayUnion([[log.logUUID : log.logDictionaryRepresentation]])])
+        ref.collection(deviceCollectionType).document(forReason.reasonUUID).updateData(["logs": FieldValue.arrayUnion([log.logDictionaryRepresentation])])
+    }
+    
+    func loadReasonsFromFirestore(completion: @escaping (Result<[Reason], FirebaseError>) -> Void) {
         guard let deviceCollectionType else { return }
         ref.collection(deviceCollectionType).getDocuments { snapshot, error in
             if let error = error {
