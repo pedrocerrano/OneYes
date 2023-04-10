@@ -33,11 +33,11 @@ class NoDetailViewController: UIViewController {
     
     //MARK: - IB ACTIONS
     @IBAction func noButtonTapped(_ sender: Any) {
-        
+        presentNoAlertController()
     }
     
     @IBAction func yesButtonTapped(_ sender: Any) {
-        
+        presentYesAlertController()
     }
     
     @IBAction func deleteReasonButtonTapped(_ sender: Any) {
@@ -53,6 +53,40 @@ class NoDetailViewController: UIViewController {
         
         UIElements.configureButton(for: noButton)
         UIElements.configureButton(for: yesButton)
+    }
+    
+    func presentNoAlertController() {
+        let noAlertController = UIAlertController(title: "NO, really?!?",
+                                                  message: "Why? What could you have done differently? Leave a note for yourself.",
+                                                  preferredStyle: .alert)
+        noAlertController.addTextField { textField in
+            textField.placeholder = "Optional Note..."
+        }
+        
+        let dismissAction     = UIAlertAction(title: "Cancel", style: .cancel)
+        let confirmNoAction   = UIAlertAction(title: "Really.", style: .default) { _ in
+            #warning("NO ALERT: Add textField input to Log entry")
+            print("No Button Pressed Confirmed. Boohoo.")
+        }
+        
+        noAlertController.addAction(dismissAction)
+        noAlertController.addAction(confirmNoAction)
+        present(noAlertController, animated: true)
+    }
+    
+    func presentYesAlertController() {
+        let yesAlertController = UIAlertController(title: "YES, really?!",
+                                                   message: .none,
+                                                   preferredStyle: .alert)
+        let dismissAction      = UIAlertAction(title: "Cancel", style: .cancel)
+        let confirmYesAction   = UIAlertAction(title: "REALLY!", style: .default) { _ in
+            #warning("YES ALERT: Configure Yes button to toggle isCompleted and to add a completedDate")
+            print("Yes Button Confirmed")
+        }
+        
+        yesAlertController.addAction(dismissAction)
+        yesAlertController.addAction(confirmYesAction)
+        present(yesAlertController, animated: true)
     }
     
 } //: CLASS
