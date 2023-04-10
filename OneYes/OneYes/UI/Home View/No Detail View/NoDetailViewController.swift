@@ -10,10 +10,11 @@ import UIKit
 class NoDetailViewController: UIViewController {
 
     //MARK: - OUTLETS
-    @IBOutlet weak var reasonTitleLabel: UILabel!
     @IBOutlet weak var reasonStartDateLabel: UILabel!
+    @IBOutlet weak var reasonTitleLabel: UILabel!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noLogCountLabel: UILabel!
     @IBOutlet weak var noDetailLogListCollectionView: UICollectionView!
     
     
@@ -29,6 +30,20 @@ class NoDetailViewController: UIViewController {
         
         configureUI()
     }
+    
+    //MARK: - IB ACTIONS
+    @IBAction func noButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func yesButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func deleteReasonButtonTapped(_ sender: Any) {
+        
+    }
+    
     
     //MARK: - FUNCTIONS
     func configureUI() {

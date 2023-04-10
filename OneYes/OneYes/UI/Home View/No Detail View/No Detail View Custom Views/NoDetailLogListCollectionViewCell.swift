@@ -10,6 +10,8 @@ import UIKit
 class NoDetailLogListCollectionViewCell: UICollectionViewCell {
     
     //MARK: - OUTLETS
+    @IBOutlet weak var noLogTitleLabel: UILabel!
+    @IBOutlet weak var noLogDateLabel: UILabel!
     
     
     //MARK: - PROPERTIES
