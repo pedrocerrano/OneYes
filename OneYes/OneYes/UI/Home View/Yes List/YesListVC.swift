@@ -32,9 +32,14 @@ class YesListVC: UIViewController {
     
 
     // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? YesDetailViewController else { return }
+        if segue.identifier == "toYesDetailViewController" {
+            guard let index = yesListCollectionView.indexPathsForSelectedItems?.first else { print("Issue with Segue to YesDetailViewController") ; return }
+            let completedReason = yesListViewModel.reasons[index.item]
+            destinationVC.yesDetailViewModel = YesDetailViewModel(reason: completedReason)
+        }
+    }
 } //: CLASS
 
 
@@ -59,7 +64,7 @@ extension YesListVC: UICollectionViewDataSource {
 extension YesListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = yesListCollectionView.frame.width
-        return CGSize(width: width, height: Constants.CVCell.cellHeight)
+        return CGSize(width: width, height: Constants.CVCell.reasonListsCellHeight)
     }
 } //: CV DelegateFlowLayout
 

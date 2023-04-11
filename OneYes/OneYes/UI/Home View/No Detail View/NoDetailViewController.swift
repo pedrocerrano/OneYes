@@ -118,7 +118,7 @@ extension NoDetailViewController: UICollectionViewDataSource {
 extension NoDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = noDetailLogListCollectionView.frame.width
-        return CGSize(width: width, height: 32)
+        return CGSize(width: width, height: Constants.CVCell.noLogListCellHeight)
     }
 } //: CV DelegateFlowLayout
 

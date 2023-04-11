@@ -14,7 +14,8 @@ struct Constants {
     }
     
     struct CVCell {
-        static let cellHeight: Double = 45
+        static let reasonListsCellHeight: Double = 45
+        static let noLogListCellHeight: Double = 30
     }
     
     struct HomeScreenUI {

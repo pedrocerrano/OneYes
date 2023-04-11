@@ -494,7 +494,7 @@
                                             <outlet property="yesCompletedDateLabel" destination="C8K-qo-SS8" id="1WU-bb-iK6"/>
                                             <outlet property="yesListNoLogCountLabel" destination="uxH-Bc-aAT" id="Mog-xg-kZ8"/>
                                             <outlet property="yesListReasonLabel" destination="JyV-yk-JLs" id="Uv2-Bj-fWv"/>
-                                            <segue destination="rLr-1u-r0a" kind="show" id="bGO-PP-yvX"/>
+                                            <segue destination="rLr-1u-r0a" kind="show" identifier="toYesDetailViewController" id="bGO-PP-yvX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -640,6 +640,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="335" height="50"/>
+                                        <connections>
+                                            <outlet property="noLogDateLabel" destination="Uvu-Df-SbM" id="aZt-Zp-FYs"/>
+                                            <outlet property="noLogTitleLabel" destination="bdE-Um-X0U" id="G3p-jR-OMJ"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -675,6 +679,7 @@
                     <connections>
                         <outlet property="completedButton" destination="fXm-st-RRR" id="Ev8-b9-Ys1"/>
                         <outlet property="completedCollectionView" destination="yKC-nA-wrD" id="G10-jH-bUU"/>
+                        <outlet property="noLogCountLabel" destination="cFl-ap-89R" id="moO-Ws-BQt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDa-57-Aof" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

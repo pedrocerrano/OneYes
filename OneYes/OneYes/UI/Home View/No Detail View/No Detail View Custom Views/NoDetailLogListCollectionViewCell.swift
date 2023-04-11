@@ -19,5 +19,4 @@ class NoDetailLogListCollectionViewCell: UICollectionViewCell {
         noLogTitleLabel.text = log.logTitle
         noLogDateLabel.text  = log.logDate.stringValue()
     }
-    
 }
