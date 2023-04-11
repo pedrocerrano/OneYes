@@ -21,7 +21,7 @@
 		29C0195629D5DE9F009EC687 /* quotesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 29C0195529D5DE9F009EC687 /* quotesData.json */; };
 		29C0196429D63B42009EC687 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196329D63B42009EC687 /* Reason.swift */; };
 		29C0196629D63B77009EC687 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196529D63B77009EC687 /* Log.swift */; };
-		29CB478929DDD7FB00E9C071 /* NeedYesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478829DDD7FB00E9C071 /* NeedYesViewModel.swift */; };
+		29CB478929DDD7FB00E9C071 /* QuoteAndNeedYesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478829DDD7FB00E9C071 /* QuoteAndNeedYesViewModel.swift */; };
 		29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478A29DE128A00E9C071 /* NoListViewModel.swift */; };
 		29CB478D29DE12AE00E9C071 /* YesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478C29DE12AE00E9C071 /* YesListViewModel.swift */; };
 		29CB478F29DE12DA00E9C071 /* NoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CB478E29DE12DA00E9C071 /* NoDetailViewModel.swift */; };
@@ -55,7 +55,7 @@
 		29C0195529D5DE9F009EC687 /* quotesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotesData.json; sourceTree = "<group>"; };
 		29C0196329D63B42009EC687 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
 		29C0196529D63B77009EC687 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		29CB478829DDD7FB00E9C071 /* NeedYesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedYesViewModel.swift; sourceTree = "<group>"; };
+		29CB478829DDD7FB00E9C071 /* QuoteAndNeedYesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteAndNeedYesViewModel.swift; sourceTree = "<group>"; };
 		29CB478A29DE128A00E9C071 /* NoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoListViewModel.swift; sourceTree = "<group>"; };
 		29CB478C29DE12AE00E9C071 /* YesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesListViewModel.swift; sourceTree = "<group>"; };
 		29CB478E29DE12DA00E9C071 /* NoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDetailViewModel.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				29FA05A029D4913A00514F90 /* QuoteAndNeedYesVC.swift */,
-				29CB478829DDD7FB00E9C071 /* NeedYesViewModel.swift */,
+				29CB478829DDD7FB00E9C071 /* QuoteAndNeedYesViewModel.swift */,
 			);
 			path = "Quote and Need";
 			sourceTree = "<group>";
@@ -354,7 +354,7 @@
 				2927A3C529DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift in Sources */,
 				2927A3C229DF73B800DB7F16 /* YesDetailViewModel.swift in Sources */,
 				29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */,
-				29CB478929DDD7FB00E9C071 /* NeedYesViewModel.swift in Sources */,
+				29CB478929DDD7FB00E9C071 /* QuoteAndNeedYesViewModel.swift in Sources */,
 				290E2F4429DC7DD0006A1049 /* NoListCollectionViewCell.swift in Sources */,
 				29F2066729DF2F9600B3ABA1 /* UIElements.swift in Sources */,
 				29CB478D29DE12AE00E9C071 /* YesListViewModel.swift in Sources */,

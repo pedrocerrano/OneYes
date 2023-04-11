@@ -35,6 +35,20 @@ class NoDetailViewModel {
         }
     }
     
+    func reloadLogs() {
+        if let reason = reason {
+            service.reloadLogsFromFirestore(forReason: reason) { result in
+                switch result {
+                case .success(let reason):
+                    self.reason = reason
+                    self.delegate?.newLogCreated()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
     func updateReasonToYes() {
         if let reason = reason {
             reason.isCompleted = true

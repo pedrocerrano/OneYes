@@ -18,7 +18,8 @@ class NoListVC: UIViewController {
     
     //MARK: - PROPERTIES
     var noListViewModel: NoListViewModel!
-//    weak var newNeedDelegate: NeedYesViewModelDelegate?
+//    weak var newNeedDelegate: QuoteAndNeedYesViewModel!
+    
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class NoListVC: UIViewController {
         noListCollectionView.dataSource = self
         noListCollectionView.delegate   = self
         noListViewModel = NoListViewModel(delegate: self)
+//        newNeedDelegate = QuoteAndNeedYesViewModel(delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,8 +82,8 @@ extension NoListVC: NoListViewModelDelegate {
 } //: NoListViewModelDelegate
 
 
-//MARK: - NeedYesViewModelDelegate
-extension NoListVC: NeedYesViewModelDelegate {
+//MARK: - QuoteAndNeedYesViewModelDelegat
+extension NoListVC: QuoteAndNeedYesViewModelDelegate {
     func newlyCreatedReason() {
         noListViewModel.loadReasons()
         noListCollectionView.reloadData()

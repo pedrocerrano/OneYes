@@ -66,8 +66,9 @@ class NoDetailViewController: UIViewController {
         
         let dismissAction     = UIAlertAction(title: "Cancel", style: .cancel)
         let confirmNoAction   = UIAlertAction(title: "Really.", style: .default) { _ in
-            guard let textField = noAlertController.textFields?.first else { return }
-            if ((textField.text?.isEmpty) != nil) {
+            guard let textField = noAlertController.textFields?.first,
+                  let unwrappedTextField = textField.text else { print("Could not handle TextField optionals") ; return }
+            if unwrappedTextField.isEmpty {
                 self.noDetailViewModel.saveNewLog(logTitle: "Quick No")
             } else {
                 self.noDetailViewModel.saveNewLog(logTitle: textField.text ?? "Unable to save Log Title")
@@ -130,6 +131,7 @@ extension NoDetailViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - EXT: NoDetailViewModelDelegate
 extension NoDetailViewController: NoDetailViewModelDelegate {
     func newLogCreated() {
+        self.noDetailViewModel.reloadLogs()
         self.noDetailLogListCollectionView.reloadData()
     }
     

@@ -14,14 +14,14 @@ class QuoteAndNeedYesVC: UIViewController {
     
     
     //MARK: - PROPERTIES
-    var needYesViewModel: NeedYesViewModel!
+    var needYesViewModel: QuoteAndNeedYesViewModel!
     
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         needYesTextField.delegate = self
-        needYesViewModel = NeedYesViewModel(delegate: self)
+        needYesViewModel = QuoteAndNeedYesViewModel(delegate: self)
     }
 } //: CLASS
 
@@ -38,9 +38,9 @@ extension QuoteAndNeedYesVC: UITextFieldDelegate {
 } //: TextFieldDelegate
 
 
-extension QuoteAndNeedYesVC: NeedYesViewModelDelegate {
+extension QuoteAndNeedYesVC: QuoteAndNeedYesViewModelDelegate {
     func newlyCreatedReason() {
-        //
+        print("Help me Rhonda!")
     }
 }
 
