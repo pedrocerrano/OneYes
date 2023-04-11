@@ -101,7 +101,11 @@ extension NoDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noDetailLogListCell", for: indexPath) as? NoDetailLogListCollectionViewCell else { return UICollectionViewCell() }
         
-        if let log = noDetailViewModel.reason?.logs[indexPath.item] {
+        let sortedLogs = noDetailViewModel.reason?.logs.sorted {
+            $0.logDate > $1.logDate
+        }
+        
+        if let log = sortedLogs?[indexPath.item] {
             cell.configureUI(withLog: log)
         }
         
