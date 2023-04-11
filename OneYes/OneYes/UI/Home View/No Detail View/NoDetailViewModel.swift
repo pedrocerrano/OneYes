@@ -8,7 +8,8 @@
 import Foundation
 
 protocol NoDetailViewModelDelegate: AnyObject {
-    func reasonSuccessfullyUpdated()
+    func newLogCreated()
+    func reasonSuccessfullyHandled()
 }
 
 class NoDetailViewModel {
@@ -28,7 +29,9 @@ class NoDetailViewModel {
     //MARK: - FUNCTIONS
     func saveNewLog(logTitle: String) {
         if let reason = reason {
-            service.saveNewLogToFirestore(forReason: reason, withLogTitle: logTitle)
+            service.saveNewLogToFirestore(forReason: reason, withLogTitle: logTitle) {
+                self.delegate?.newLogCreated()
+            }
         }
     }
     
@@ -36,12 +39,16 @@ class NoDetailViewModel {
         if let reason = reason {
             reason.isCompleted = true
             service.updateReasonWithYes(forReason: reason) {
-                self.delegate?.reasonSuccessfullyUpdated()
+                self.delegate?.reasonSuccessfullyHandled()
             }
         }
     }
     
     func deleteReason() {
-        
+        if let reason = reason {
+            service.deleteFromFirestore(from: reason) {
+                self.delegate?.reasonSuccessfullyHandled()
+            }
+        }
     }
 }

@@ -10,6 +10,9 @@ import UIKit
 class YesDetailViewController: UIViewController {
 
     //MARK: - OUTLETS
+    @IBOutlet weak var reasonStartDateLabel: UILabel!
+    @IBOutlet weak var yesReceivedDateLabel: UILabel!
+    @IBOutlet weak var reasonTitleLabel: UILabel!
     @IBOutlet weak var completedButton: UIButton!
     @IBOutlet weak var noLogCountLabel: UILabel!
     @IBOutlet weak var completedCollectionView: UICollectionView!
@@ -29,11 +32,19 @@ class YesDetailViewController: UIViewController {
     }
     
     //MARK: - IB ACTIONS
-    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        yesDetailViewModel.deleteReason()
+    }
     
     
     //MARK: - FUNCTIONS
     func configureUI() {
+        guard let reason = yesDetailViewModel.reason else { return }
+        reasonStartDateLabel.text = reason.startDate.stringValue()
+        yesReceivedDateLabel.text = reason.completedDate?.stringValue()
+        reasonTitleLabel.text     = reason.title
+        noLogCountLabel.text      = "(\(reason.logs.count))"
+        
         UIElements.configureButton(for: completedButton)
     }
     
@@ -69,3 +80,11 @@ extension YesDetailViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: Constants.CVCell.noLogListCellHeight)
     }
 } //: CV DelegateFlowLayout
+
+
+//MARK: - EXT: YesDetailViewModeldelegate
+extension YesDetailViewController: YesDetailViewModelDelegate {
+    func reasonSuccessfullyDeleted() {
+        self.navigationController?.popViewController(animated: true)
+    }
+}

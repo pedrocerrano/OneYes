@@ -28,7 +28,7 @@ struct FirebaseService {
         ref.collection(deviceCollectionType).document(reason.reasonUUID).setData(reason.reasonDictionaryRepresentation)
     }
     
-    func saveNewLogToFirestore(forReason: Reason, withLogTitle logTitle: String) {
+    func saveNewLogToFirestore(forReason: Reason, withLogTitle logTitle: String, completion: @escaping () -> Void) {
         guard let deviceCollectionType else { return }
         let logUUID = UUID().uuidString
         let log     = Log(logTitle: logTitle, logUUID: logUUID)
@@ -62,7 +62,7 @@ struct FirebaseService {
         ])
     }
     
-    func deleteFromFirestore(from reason: Reason) {
+    func deleteFromFirestore(from reason: Reason, completion: @escaping () -> Void) {
         guard let deviceCollectionType else { return }
         ref.collection(deviceCollectionType).document(reason.reasonUUID).delete()
     }

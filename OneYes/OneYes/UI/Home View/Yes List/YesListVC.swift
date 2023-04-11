@@ -37,7 +37,7 @@ class YesListVC: UIViewController {
         if segue.identifier == "toYesDetailViewController" {
             guard let index = yesListCollectionView.indexPathsForSelectedItems?.first else { print("Issue with Segue to YesDetailViewController") ; return }
             let completedReason = yesListViewModel.reasons[index.item]
-            destinationVC.yesDetailViewModel = YesDetailViewModel(reason: completedReason)
+            destinationVC.yesDetailViewModel = YesDetailViewModel(reason: completedReason, delegate: destinationVC.self)
         }
     }
 } //: CLASS

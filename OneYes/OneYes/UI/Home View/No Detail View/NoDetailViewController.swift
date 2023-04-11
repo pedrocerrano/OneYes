@@ -41,15 +41,15 @@ class NoDetailViewController: UIViewController {
     }
     
     @IBAction func deleteReasonButtonTapped(_ sender: Any) {
-        
+        noDetailViewModel.deleteReason()
     }
     
     
     //MARK: - FUNCTIONS
     func configureUI() {
         guard let reason = noDetailViewModel.reason else { return }
-        reasonTitleLabel.text     = reason.title
         reasonStartDateLabel.text = reason.startDate.stringValue()
+        reasonTitleLabel.text     = reason.title
         noLogCountLabel.text      = "(\(reason.logs.count))"
         
         UIElements.configureButton(for: noButton)
@@ -67,7 +67,11 @@ class NoDetailViewController: UIViewController {
         let dismissAction     = UIAlertAction(title: "Cancel", style: .cancel)
         let confirmNoAction   = UIAlertAction(title: "Really.", style: .default) { _ in
             guard let textField = noAlertController.textFields?.first else { return }
-            self.noDetailViewModel.saveNewLog(logTitle: textField.text ?? "Quick No")
+            if ((textField.text?.isEmpty) != nil) {
+                self.noDetailViewModel.saveNewLog(logTitle: "Quick No")
+            } else {
+                self.noDetailViewModel.saveNewLog(logTitle: textField.text ?? "Unable to save Log Title")
+            }
         }
         
         noAlertController.addAction(dismissAction)
@@ -125,7 +129,11 @@ extension NoDetailViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - EXT: NoDetailViewModelDelegate
 extension NoDetailViewController: NoDetailViewModelDelegate {
-    func reasonSuccessfullyUpdated() {
+    func newLogCreated() {
+        self.noDetailLogListCollectionView.reloadData()
+    }
+    
+    func reasonSuccessfullyHandled() {
         self.navigationController?.popViewController(animated: true)
     }
 }
