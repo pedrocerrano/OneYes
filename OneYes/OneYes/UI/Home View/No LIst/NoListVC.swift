@@ -39,8 +39,8 @@ class NoListVC: UIViewController {
         guard let destinationVC = segue.destination as? NoDetailViewController else { return }
         if segue.identifier == "toDetailViewController" {
             guard let index = noListCollectionView.indexPathsForSelectedItems?.first else { print("Issue with Segue to Detail VC") ; return }
-            let reason      = noListViewModel.reason[index.item]
-            destinationVC.noDetailViewModel = NoDetailViewModel(reason: reason)
+            let reason      = noListViewModel.reasons[index.item]
+            destinationVC.noDetailViewModel = NoDetailViewModel(reason: reason, delegate: destinationVC.self)
         }
     }
 } //: CLASS
@@ -49,13 +49,13 @@ class NoListVC: UIViewController {
 //MARK: - EXT: CollectionView DataSource
 extension NoListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return noListViewModel.reason.count
+        return noListViewModel.reasons.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noListCell", for: indexPath) as? NoListCollectionViewCell else { return UICollectionViewCell() }
         
-        let reason = noListViewModel.reason[indexPath.item]
+        let reason = noListViewModel.reasons[indexPath.item]
         cell.configureUI(withReason: reason)
         
         return cell

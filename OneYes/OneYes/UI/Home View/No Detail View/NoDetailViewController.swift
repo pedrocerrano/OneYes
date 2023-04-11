@@ -81,8 +81,7 @@ class NoDetailViewController: UIViewController {
                                                    preferredStyle: .alert)
         let dismissAction      = UIAlertAction(title: "Cancel", style: .cancel)
         let confirmYesAction   = UIAlertAction(title: "REALLY!", style: .default) { _ in
-            #warning("YES ALERT: Configure Yes button to toggle isCompleted and to add a completedDate")
-            print("Yes Button Confirmed")
+            self.noDetailViewModel.updateReasonToYes()
         }
         
         yesAlertController.addAction(dismissAction)
@@ -118,3 +117,11 @@ extension NoDetailViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: 32)
     }
 } //: CV DelegateFlowLayout
+
+
+//MARK: - EXT: NoDetailViewModelDelegate
+extension NoDetailViewController: NoDetailViewModelDelegate {
+    func reasonSuccessfullyUpdated() {
+        self.navigationController?.popViewController(animated: true)
+    }
+}

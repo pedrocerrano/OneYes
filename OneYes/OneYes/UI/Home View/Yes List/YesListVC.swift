@@ -13,12 +13,21 @@ class YesListVC: UIViewController {
     @IBOutlet weak var yesListCollectionView: UICollectionView!
 
     
+    //MARK: - PROPERTIES
+    var yesListViewModel: YesListViewModel!
+    
+    
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         self.yesListCollectionView.dataSource = self
         self.yesListCollectionView.delegate   = self
-
+        yesListViewModel = YesListViewModel(delegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        yesListViewModel.loadYesReasons()
     }
     
 
@@ -32,12 +41,14 @@ class YesListVC: UIViewController {
 //MARK: - EXT: CollectionView DataSource
 extension YesListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return yesListViewModel.reasons.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yesListCell", for: indexPath) as? YesListCollectionViewCell else { return UICollectionViewCell() }
         
+        let reason = yesListViewModel.reasons[indexPath.item]
+        cell.configureUI(withReason: reason)
         
         return cell
     }
@@ -51,3 +62,11 @@ extension YesListVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: Constants.CVCell.cellHeight)
     }
 } //: CV DelegateFlowLayout
+
+
+//MARK: - EXT: YesListViewModelDelegate
+extension YesListVC: YesListViewModelDelegate {
+    func reasonsSuccessfullyLoaded() {
+        yesListCollectionView.reloadData()
+    }
+}

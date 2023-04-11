@@ -14,7 +14,7 @@ protocol NoListViewModelDelegate: AnyObject {
 class NoListViewModel {
     
     //MARK: - PROPERTIES
-    var reason: [Reason] = []
+    var reasons: [Reason] = []
     var service: FirebaseService
     private weak var delegate: NoListViewModelDelegate?
     
@@ -32,7 +32,7 @@ class NoListViewModel {
                     $0.startDate > $1.startDate
                 }
                 
-                self?.reason = sortedReasons.filter ({ reason in
+                self?.reasons = sortedReasons.filter ({ reason in
                     reason.isCompleted == false
                 })
                 self?.delegate?.dataLoadedSuccessfully()

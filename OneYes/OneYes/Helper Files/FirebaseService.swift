@@ -34,7 +34,7 @@ struct FirebaseService {
         let log     = Log(logTitle: logTitle, logUUID: logUUID)
 //        ref.collection(deviceCollectionType).document(forReason.reasonUUID).updateData(["logs": [log.logUUID : log.logDictionaryRepresentation]])
 //        ref.collection(deviceCollectionType).document(forReason.reasonUUID).updateData(["logs": FieldValue.arrayUnion([[log.logUUID : log.logDictionaryRepresentation]])])
-        ref.collection(deviceCollectionType).document(forReason.reasonUUID).updateData(["logs": FieldValue.arrayUnion([log.logDictionaryRepresentation])])
+        ref.collection(deviceCollectionType).document(forReason.reasonUUID).updateData([Reason.ReasonKey.logs: FieldValue.arrayUnion([log.logDictionaryRepresentation])])
     }
     
     func loadReasonsFromFirestore(completion: @escaping (Result<[Reason], FirebaseError>) -> Void) {
@@ -51,6 +51,15 @@ struct FirebaseService {
             let reasons = reasonDictArray.compactMap { Reason(fromReasonDictionary: $0) }
             completion(.success(reasons))
         }
+    }
+    
+    func updateReasonWithYes(forReason reason: Reason, completion: @escaping () -> Void) {
+        guard let deviceCollectionType else { return }
+        let reasonCompletedDate = Date().timeIntervalSince1970
+        ref.collection(deviceCollectionType).document(reason.reasonUUID).updateData([
+            Reason.ReasonKey.isCompleted : reason.isCompleted,
+            Reason.ReasonKey.completedDate : reasonCompletedDate
+        ])
     }
     
     func deleteFromFirestore(from reason: Reason) {
