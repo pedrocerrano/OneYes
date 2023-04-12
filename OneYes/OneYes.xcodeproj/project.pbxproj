@@ -18,6 +18,7 @@
 		2927A3C029DF675400DB7F16 /* YesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2927A3BF29DF675400DB7F16 /* YesDetailViewController.swift */; };
 		2927A3C229DF73B800DB7F16 /* YesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2927A3C129DF73B800DB7F16 /* YesDetailViewModel.swift */; };
 		2927A3C529DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2927A3C429DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift */; };
+		29A274FE29E71D59008C87CD /* TextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A274FD29E71D59008C87CD /* TextFormatter.swift */; };
 		29C0195629D5DE9F009EC687 /* quotesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 29C0195529D5DE9F009EC687 /* quotesData.json */; };
 		29C0196429D63B42009EC687 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196329D63B42009EC687 /* Reason.swift */; };
 		29C0196629D63B77009EC687 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C0196529D63B77009EC687 /* Log.swift */; };
@@ -52,6 +53,7 @@
 		2927A3BF29DF675400DB7F16 /* YesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesDetailViewController.swift; sourceTree = "<group>"; };
 		2927A3C129DF73B800DB7F16 /* YesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesDetailViewModel.swift; sourceTree = "<group>"; };
 		2927A3C429DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesDetailLogListCollectionViewCell.swift; sourceTree = "<group>"; };
+		29A274FD29E71D59008C87CD /* TextFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormatter.swift; sourceTree = "<group>"; };
 		29C0195529D5DE9F009EC687 /* quotesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotesData.json; sourceTree = "<group>"; };
 		29C0196329D63B42009EC687 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
 		29C0196529D63B77009EC687 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				29CB479029DE1D3C00E9C071 /* DateFormatter.swift */,
 				29F2066629DF2F9600B3ABA1 /* UIElements.swift */,
 				29DFF1BB29DB54E300096F47 /* QuoteDataService.swift */,
+				29A274FD29E71D59008C87CD /* TextFormatter.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				2927A3C029DF675400DB7F16 /* YesDetailViewController.swift in Sources */,
 				29CB478F29DE12DA00E9C071 /* NoDetailViewModel.swift in Sources */,
 				29DFF1BC29DB54E300096F47 /* QuoteDataService.swift in Sources */,
+				29A274FE29E71D59008C87CD /* TextFormatter.swift in Sources */,
 				29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */,
 				29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */,
 			);

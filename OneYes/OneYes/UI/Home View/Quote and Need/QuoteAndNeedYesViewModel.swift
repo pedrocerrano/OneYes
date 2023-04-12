@@ -27,9 +27,12 @@ struct QuoteAndNeedYesViewModel {
     }
     
     func loadRandomQuote(with quoteString: UILabel) {
-        var index = Int.random(in: 0..<quotesData.count)
+        let index = Int.random(in: 0..<quotesData.count)
         let quote = quotesData[index].quote
         let author = quotesData[index].author
         quoteString.text = "\"\(quote)\" -\(author)"
+        quoteString.attributedText = NSMutableAttributedString()
+            .italics("\"\(quote)\"")
+            .bold(" -\(author)")
     }
 }
