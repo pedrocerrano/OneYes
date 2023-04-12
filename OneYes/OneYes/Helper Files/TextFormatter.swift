@@ -29,5 +29,5 @@ extension NSMutableAttributedString {
         let boldAttributes: [NSAttributedString.Key : Any] = [.font : boldFont]
         self.append(NSAttributedString(string: value, attributes: boldAttributes))
         return self
-    }
+    } 
 }

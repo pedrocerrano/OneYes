@@ -224,10 +224,10 @@
 			isa = PBXGroup;
 			children = (
 				29DFF1B129DB337900096F47 /* FirebaseService.swift */,
-				290E2F4729DC7EEE006A1049 /* Constants.swift */,
-				29CB479029DE1D3C00E9C071 /* DateFormatter.swift */,
-				29F2066629DF2F9600B3ABA1 /* UIElements.swift */,
 				29DFF1BB29DB54E300096F47 /* QuoteDataService.swift */,
+				290E2F4729DC7EEE006A1049 /* Constants.swift */,
+				29F2066629DF2F9600B3ABA1 /* UIElements.swift */,
+				29CB479029DE1D3C00E9C071 /* DateFormatter.swift */,
 				29A274FD29E71D59008C87CD /* TextFormatter.swift */,
 			);
 			path = "Helper Files";

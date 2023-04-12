@@ -33,6 +33,6 @@ struct QuoteAndNeedYesViewModel {
         quoteString.text = "\"\(quote)\" -\(author)"
         quoteString.attributedText = NSMutableAttributedString()
             .italics("\"\(quote)\"")
-            .bold(" -\(author)")
+            .bold(" -\(author)") 
     }
 }
