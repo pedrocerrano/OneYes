@@ -63,7 +63,7 @@ extension Reason {
         }
         
         let completedDate = reasonDictionary[ReasonKey.completedDate] as? Double ?? 0
-        var logsArray     = logsDictionaries.compactMap { Log(fromLogDictionary: $0) }
+        let logsArray     = logsDictionaries.compactMap { Log(fromLogDictionary: $0) }
         
         self.init(title: title, startDate: Date(timeIntervalSince1970: startDate), completedDate: Date(timeIntervalSince1970: completedDate), isCompleted: isCompleted, logs: logsArray, reasonUUID: reasonUUID)
     }
