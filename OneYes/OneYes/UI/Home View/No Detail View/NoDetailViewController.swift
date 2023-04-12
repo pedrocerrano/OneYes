@@ -50,10 +50,15 @@ class NoDetailViewController: UIViewController {
         guard let reason = noDetailViewModel.reason else { return }
         reasonStartDateLabel.text = reason.startDate.stringValue()
         reasonTitleLabel.text     = reason.title
-        noLogCountLabel.text      = "(\(reason.logs.count))"
+        configureLogCountUI()
         
         UIElements.configureButton(for: noButton)
         UIElements.configureButton(for: yesButton)
+    }
+    
+    func configureLogCountUI() {
+        guard let reason = noDetailViewModel.reason else { return }
+        noLogCountLabel.text      = "(\(reason.logs.count))"
     }
     
     func presentNoAlertController() {
@@ -133,6 +138,7 @@ extension NoDetailViewController: NoDetailViewModelDelegate {
     func newLogCreated() {
         self.noDetailViewModel.reloadLogs()
         self.noDetailLogListCollectionView.reloadData()
+        self.configureLogCountUI()
     }
     
     func reasonSuccessfullyHandled() {
