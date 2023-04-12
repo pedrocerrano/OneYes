@@ -9,8 +9,17 @@ import UIKit
 
 struct Constants {
     
+    struct Firebase {
+        static let deviceCollectionType = UIDevice.current.identifierForVendor?.uuidString
+    }
+    
+    struct Notifications {
+        static let newReasonCreated = Notification.Name("newReasonCreated")
+    }
+    
     struct CVCell {
-        static let cellHeight: Double = 45
+        static let reasonListsCellHeight: Double = 45
+        static let noLogListCellHeight: Double = 30
     }
     
     struct HomeScreenUI {
