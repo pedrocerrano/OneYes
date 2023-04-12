@@ -18,7 +18,6 @@ class NoListVC: UIViewController {
     
     //MARK: - PROPERTIES
     var noListViewModel: NoListViewModel!
-//    weak var newNeedDelegate: QuoteAndNeedYesViewModel!
     
     
     //MARK: - LIFECYCLE
@@ -27,12 +26,23 @@ class NoListVC: UIViewController {
         noListCollectionView.dataSource = self
         noListCollectionView.delegate   = self
         noListViewModel = NoListViewModel(delegate: self)
-//        newNeedDelegate = QuoteAndNeedYesViewModel(delegate: self)
+        setupNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         noListViewModel.loadReasons()
+    }
+    
+    
+    //MARK: - FUNCTIONS
+    func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(newReasonCreated), name: Constants.Notifications.newReasonCreated, object: nil)
+    }
+    
+    @objc func newReasonCreated() {
+        noListViewModel.loadReasons()
+        noListCollectionView.reloadData()
     }
     
 
@@ -81,11 +91,3 @@ extension NoListVC: NoListViewModelDelegate {
     }
 } //: NoListViewModelDelegate
 
-
-//MARK: - QuoteAndNeedYesViewModelDelegat
-extension NoListVC: QuoteAndNeedYesViewModelDelegate {
-    func newlyCreatedReason() {
-        noListViewModel.loadReasons()
-        noListCollectionView.reloadData()
-    }
-}

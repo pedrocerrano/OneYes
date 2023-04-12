@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuoteAndNeedYesVC: UIViewController {
+class QuoteAndNeedYesViewController: UIViewController {
 
     //MARK: - OUTLETS
     @IBOutlet weak var needYesTextField: UITextField!
@@ -21,13 +21,13 @@ class QuoteAndNeedYesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         needYesTextField.delegate = self
-        needYesViewModel = QuoteAndNeedYesViewModel(delegate: self)
+        needYesViewModel = QuoteAndNeedYesViewModel()
     }
 } //: CLASS
 
 
 //MARK: - TextFieldDelegate
-extension QuoteAndNeedYesVC: UITextFieldDelegate {
+extension QuoteAndNeedYesViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let yesNeeded = needYesTextField.text else { return false }
         needYesViewModel.saveNewReason(needYesFor: yesNeeded)
@@ -38,10 +38,5 @@ extension QuoteAndNeedYesVC: UITextFieldDelegate {
 } //: TextFieldDelegate
 
 
-extension QuoteAndNeedYesVC: QuoteAndNeedYesViewModelDelegate {
-    func newlyCreatedReason() {
-        print("Help me Rhonda!")
-    }
-}
 
 

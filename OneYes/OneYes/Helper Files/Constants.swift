@@ -13,6 +13,10 @@ struct Constants {
         static let deviceCollectionType = UIDevice.current.identifierForVendor?.uuidString
     }
     
+    struct Notifications {
+        static let newReasonCreated = Notification.Name("newReasonCreated")
+    }
+    
     struct CVCell {
         static let reasonListsCellHeight: Double = 45
         static let noLogListCellHeight: Double = 30

@@ -7,27 +7,21 @@
 
 import Foundation
 
-protocol QuoteAndNeedYesViewModelDelegate: AnyObject {
-    func newlyCreatedReason()
-}
-
 struct QuoteAndNeedYesViewModel {
     
     //MARK: - PROPERTIES
     var reason: Reason?
     let service: FirebaseService
-    private weak var delegate: QuoteAndNeedYesViewModelDelegate?
         
-    init(reason: Reason? = nil, service: FirebaseService = FirebaseService(), delegate: QuoteAndNeedYesViewModelDelegate) {
+    init(reason: Reason? = nil, service: FirebaseService = FirebaseService()) {
         self.reason   = reason
         self.service  = service
-        self.delegate = delegate
     }
     
     //MARK: - FUNCTIONS
     func saveNewReason(needYesFor reasonTitle: String, logs: [Log] = []) {
         service.saveNewReasonToFirestore(title: reasonTitle, logs: logs) {
-            delegate?.newlyCreatedReason()
+            NotificationCenter.default.post(name: Constants.Notifications.newReasonCreated, object: nil)
         }
     }
 }

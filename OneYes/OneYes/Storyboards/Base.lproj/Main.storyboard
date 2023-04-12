@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RiO-nV-obI">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -181,7 +180,7 @@
             <objects>
                 <viewController id="VKn-yb-ZrU" customClass="NoDetailViewController" customModule="OneYes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SEJ-Il-jFk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fSX-Yj-W8o">
@@ -359,10 +358,10 @@
             </objects>
             <point key="canvasLocation" x="2634" y="-60"/>
         </scene>
-        <!--Quote And Need YesVC-->
+        <!--Quote And Need Yes View Controller-->
         <scene sceneID="vCD-x7-bbJ">
             <objects>
-                <viewController id="fPk-02-ra5" customClass="QuoteAndNeedYesVC" customModule="OneYes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fPk-02-ra5" customClass="QuoteAndNeedYesViewController" customModule="OneYes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Bv-MC-v2o">
                         <rect key="frame" x="0.0" y="0.0" width="359" height="130"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -533,7 +532,7 @@
             <objects>
                 <viewController id="rLr-1u-r0a" customClass="YesDetailViewController" customModule="OneYes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JNv-fP-2TZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1ZW-8Y-woX">
