@@ -40,4 +40,14 @@ struct Constants {
         static let shadowOffset             = CGSize(width: 0, height: 6)
         static let masksToBounds: Bool      = false
     }
+    
+    struct CircleLabelUI {
+        static let borderColor              = UIColor.white.cgColor
+        static let borderWidth: CGFloat     = 1
+        static let shadowColor              = UIColor.black.cgColor
+        static let shadowOpacity: Float     = 0.4
+        static let shadowRadius: CGFloat    = 5
+        static let shadowOffset             = CGSize(width: 0, height: 6)
+        static let masksToBounds: Bool      = true
+    }
 }

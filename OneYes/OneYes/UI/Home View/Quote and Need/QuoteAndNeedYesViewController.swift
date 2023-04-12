@@ -37,10 +37,21 @@ class QuoteAndNeedYesViewController: UIViewController {
 extension QuoteAndNeedYesViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let yesNeeded = needYesTextField.text else { return false }
-        needYesViewModel.saveNewReason(needYesFor: yesNeeded)
-        needYesTextField.resignFirstResponder()
-        needYesTextField.text?.removeAll()
+        if yesNeeded.isEmpty {
+            presentEmptyTextFieldAlert()
+        } else {
+            needYesViewModel.saveNewReason(needYesFor: yesNeeded)
+            needYesTextField.resignFirstResponder()
+            needYesTextField.text?.removeAll()
+        }
         return true
+    }
+    
+    func presentEmptyTextFieldAlert() {
+        let emptyTextFieldAlertController = UIAlertController(title: "Give A Reason", message: "Please write out the reason for why you need a Yes.", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Will do!", style: .cancel)
+        emptyTextFieldAlertController.addAction(dismissAction)
+        present(emptyTextFieldAlertController, animated: true)
     }
 } //: TextFieldDelegate
 
