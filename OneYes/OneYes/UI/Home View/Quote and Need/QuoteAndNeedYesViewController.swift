@@ -11,6 +11,7 @@ class QuoteAndNeedYesViewController: UIViewController {
 
     //MARK: - OUTLETS
     @IBOutlet weak var needYesTextField: UITextField!
+    @IBOutlet weak var dailyQuoteLabel: UILabel!
     
     
     //MARK: - PROPERTIES
@@ -22,6 +23,12 @@ class QuoteAndNeedYesViewController: UIViewController {
         super.viewDidLoad()
         needYesTextField.delegate = self
         needYesViewModel = QuoteAndNeedYesViewModel()
+        configureQuote()
+    }
+    
+    //MARK: - FUNCTIONS
+    func configureQuote() {
+        needYesViewModel.loadRandomQuote(with: dailyQuoteLabel)
     }
 } //: CLASS
 

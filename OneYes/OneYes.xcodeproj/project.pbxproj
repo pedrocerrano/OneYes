@@ -29,7 +29,7 @@
 		29DFF1AC29DB290300096F47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */; };
 		29DFF1AF29DB2A6100096F47 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 29DFF1AE29DB2A6100096F47 /* FirebaseFirestore */; };
 		29DFF1B229DB337900096F47 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFF1B129DB337900096F47 /* FirebaseService.swift */; };
-		29DFF1BC29DB54E300096F47 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFF1BB29DB54E300096F47 /* ModelData.swift */; };
+		29DFF1BC29DB54E300096F47 /* QuoteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DFF1BB29DB54E300096F47 /* QuoteDataService.swift */; };
 		29EAC17A29D73C30003EDB84 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EAC17929D73C30003EDB84 /* Quote.swift */; };
 		29F2066729DF2F9600B3ABA1 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F2066629DF2F9600B3ABA1 /* UIElements.swift */; };
 		29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA059C29D4913A00514F90 /* AppDelegate.swift */; };
@@ -62,7 +62,7 @@
 		29CB479029DE1D3C00E9C071 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		29DFF1AB29DB290300096F47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29DFF1B129DB337900096F47 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
-		29DFF1BB29DB54E300096F47 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		29DFF1BB29DB54E300096F47 /* QuoteDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDataService.swift; sourceTree = "<group>"; };
 		29EAC17929D73C30003EDB84 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		29F2066629DF2F9600B3ABA1 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
 		29FA059929D4913A00514F90 /* OneYes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneYes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,7 +195,6 @@
 		29C0195429D5DE10009EC687 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				29DFF1BB29DB54E300096F47 /* ModelData.swift */,
 				29C0195529D5DE9F009EC687 /* quotesData.json */,
 			);
 			path = Resources;
@@ -226,6 +225,7 @@
 				290E2F4729DC7EEE006A1049 /* Constants.swift */,
 				29CB479029DE1D3C00E9C071 /* DateFormatter.swift */,
 				29F2066629DF2F9600B3ABA1 /* UIElements.swift */,
+				29DFF1BB29DB54E300096F47 /* QuoteDataService.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -370,7 +370,7 @@
 				29CB479129DE1D3C00E9C071 /* DateFormatter.swift in Sources */,
 				2927A3C029DF675400DB7F16 /* YesDetailViewController.swift in Sources */,
 				29CB478F29DE12DA00E9C071 /* NoDetailViewModel.swift in Sources */,
-				29DFF1BC29DB54E300096F47 /* ModelData.swift in Sources */,
+				29DFF1BC29DB54E300096F47 /* QuoteDataService.swift in Sources */,
 				29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */,
 				29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */,
 			);
