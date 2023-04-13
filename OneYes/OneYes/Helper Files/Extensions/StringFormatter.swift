@@ -1,5 +1,5 @@
 //
-//  TextFormatter.swift
+//  StringFormatter.swift
 //  OneYes
 //
 //  Created by iMac Pro on 4/12/23.

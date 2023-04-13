@@ -13,15 +13,15 @@ struct Navigation {
         UserDefaults.standard.set(false, forKey: "userHasReasons")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let navigation = storyboard.instantiateViewController(withIdentifier: "OnboardingNavController")
-        UIApplication.shared.windows.first?.rootViewController = navigation
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        UIApplication.shared.currentUIWindow()?.rootViewController = navigation
+        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
     }
     
     static func reasonsAvailable() {
         UserDefaults.standard.set(true, forKey: "userHasReasons")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let navigation = storyboard.instantiateViewController(withIdentifier: "HomeNavController")
-        UIApplication.shared.windows.first?.rootViewController = navigation
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        UIApplication.shared.currentUIWindow()?.rootViewController = navigation
+        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
     }
 }
