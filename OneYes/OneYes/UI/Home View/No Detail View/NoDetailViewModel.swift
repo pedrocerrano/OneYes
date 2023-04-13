@@ -61,7 +61,18 @@ class NoDetailViewModel {
     func deleteReason() {
         if let reason = reason {
             service.deleteFromFirestore(from: reason) {
-                self.delegate?.reasonSuccessfullyHandled()
+                self.service.loadReasonsFromFirestore { result in
+                    switch result {
+                    case .success(let reasons):
+                        if reasons.isEmpty {
+                            Navigation.noReasonsAvailable()
+                        } else {
+                            self.delegate?.reasonSuccessfullyHandled()
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
             }
         }
     }

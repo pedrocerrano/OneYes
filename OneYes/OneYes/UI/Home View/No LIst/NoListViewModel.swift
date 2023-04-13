@@ -28,18 +28,14 @@ class NoListViewModel {
         service.loadReasonsFromFirestore { [weak self] result in
             switch result {
             case .success(let reasons):
-                if reasons.isEmpty {
-                    Navigation.noReasonsAvailable()
-                } else {
-                    let sortedReasons = reasons.sorted {
-                        $0.startDate > $1.startDate
-                    }
-                    
-                    self?.reasons = sortedReasons.filter ({ reason in
-                        reason.isCompleted == false
-                    })
-                    self?.delegate?.dataLoadedSuccessfully()
+                let sortedReasons = reasons.sorted {
+                    $0.startDate > $1.startDate
                 }
+                
+                self?.reasons = sortedReasons.filter ({ reason in
+                    reason.isCompleted == false
+                })
+                self?.delegate?.dataLoadedSuccessfully()
             case .failure(let error):
                 print(error.localizedDescription)
             }
