@@ -1,48 +1,47 @@
 //
-//  QuoteAndNeedYesVC.swift
+//  OnboardingQuoteAndNeedViewController.swift
 //  OneYes
 //
-//  Created by iMac Pro on 3/29/23.
+//  Created by iMac Pro on 4/13/23.
 //
 
 import UIKit
 
-class QuoteAndNeedYesViewController: UIViewController {
+class OnboardingQuoteAndNeedViewController: UIViewController {
 
     //MARK: - OUTLETS
-    @IBOutlet weak var needYesTextField: UITextField!
-    @IBOutlet weak var dailyQuoteLabel: UILabel!
-    
+    @IBOutlet weak var motivationalQuoteLabel: UILabel!
+    @IBOutlet weak var reasonTitleTextField: UITextField!
     
     //MARK: - PROPERTIES
-    var needYesViewModel: QuoteAndNeedYesViewModel!
+    var onboardingQuoteAndNeedViewModel: OnboardingQuoteAndNeedViewModel!
     
     
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        needYesTextField.delegate = self
-        needYesViewModel = QuoteAndNeedYesViewModel()
+        reasonTitleTextField.delegate   = self
+        onboardingQuoteAndNeedViewModel = OnboardingQuoteAndNeedViewModel()
         configureQuote()
     }
     
     //MARK: - FUNCTIONS
     func configureQuote() {
-        needYesViewModel.loadRandomQuote(with: dailyQuoteLabel)
+        QuoteData.loadRandomQuote(for: motivationalQuoteLabel)
     }
 } //: CLASS
 
 
 //MARK: - TextFieldDelegate
-extension QuoteAndNeedYesViewController: UITextFieldDelegate {
+extension OnboardingQuoteAndNeedViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let yesNeeded = needYesTextField.text else { return false }
+        guard let yesNeeded = reasonTitleTextField.text else { return false }
         if yesNeeded.isEmpty {
             presentEmptyTextFieldAlert()
         } else {
-            needYesViewModel.saveNewReason(needYesFor: yesNeeded)
-            needYesTextField.resignFirstResponder()
-            needYesTextField.text?.removeAll()
+            onboardingQuoteAndNeedViewModel.saveNewReason(needYesFor: yesNeeded)
+            reasonTitleTextField.resignFirstResponder()
+            reasonTitleTextField.text?.removeAll()
         }
         return true
     }
@@ -53,8 +52,4 @@ extension QuoteAndNeedYesViewController: UITextFieldDelegate {
         emptyTextFieldAlertController.addAction(dismissAction)
         present(emptyTextFieldAlertController, animated: true)
     }
-} //: TextFieldDelegate
-
-
-
-
+}

@@ -5,9 +5,9 @@
 //  Created by iMac Pro on 4/3/23.
 //
 
-import Foundation
+import UIKit
 
-class QuoteDataService {
+struct QuoteDataService {
     static func load<T: Decodable>(_ filename: String) -> T {
         let data: Data
         
@@ -29,3 +29,19 @@ class QuoteDataService {
         }
     }
 }
+
+struct QuoteData {
+    
+    static var quotesData: [Quote] = QuoteDataService.load("quotesData.json")
+    
+    static func loadRandomQuote(for quoteString: UILabel) {
+        let index = Int.random(in: 0..<quotesData.count)
+        let quote = quotesData[index].quote
+        let author = quotesData[index].author
+        quoteString.text = "\"\(quote)\" -\(author)"
+        quoteString.attributedText = NSMutableAttributedString()
+            .italics("\"\(quote)\"")
+            .bold(" -\(author)")
+    }
+}
+

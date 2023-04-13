@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     //MARK: - OUTLETS
-    @IBOutlet weak var QOTDContainerView: UIView!
+    @IBOutlet weak var quoteAndNeedContainerView: UIView!
     @IBOutlet weak var noListContainerView: UIView!
     @IBOutlet weak var yesListContainerView: UIView!
     
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     
     //MARK: - FUNCTIONS
     func configureUI() {
-        UIElements.configureView(for: QOTDContainerView)
+        UIElements.configureView(for: quoteAndNeedContainerView)
         UIElements.configureView(for: noListContainerView)
         UIElements.configureView(for: yesListContainerView)
     }
