@@ -19,6 +19,16 @@ struct UIElements {
         button.layer.masksToBounds = Constants.DetailButtonUI.masksToBounds
     }
     
+    static func configureCircleLabel(for label: UILabel) {
+        let height                = label.frame.height
+        label.layer.cornerRadius  = height/2
+        label.layer.borderColor   = Constants.CircleLabelUI.borderColor
+        label.layer.borderWidth   = Constants.CircleLabelUI.borderWidth
+        label.layer.shadowRadius  = Constants.CircleLabelUI.shadowRadius
+        label.layer.shadowOffset  = Constants.CircleLabelUI.shadowOffset
+        label.layer.masksToBounds = Constants.CircleLabelUI.masksToBounds
+    }
+    
     
     static func configureView(for view: UIView) {
         view.layer.cornerRadius  = Constants.HomeScreenUI.cornerRadius

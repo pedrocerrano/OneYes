@@ -29,17 +29,21 @@ class YesListViewModel {
         service.loadReasonsFromFirestore { [weak self] result in
             switch result {
             case .success(let yesReasons):
-                let filteredYesReasons = yesReasons.filter { yesReasons in
-                    yesReasons.isCompleted == true
+                if yesReasons.isEmpty {
+                    Navigation.noReasonsAvailable()
+                } else {
+                    let filteredYesReasons = yesReasons.filter { yesReasons in
+                        yesReasons.isCompleted == true
+                    }
+                    
+                    self?.reasons = filteredYesReasons.sorted {
+                        $0.completedDate ?? Date() > $1.completedDate ?? Date()
+                    }
+                    
+                    self?.delegate?.reasonsSuccessfullyLoaded()
                 }
-                
-                self?.reasons = filteredYesReasons.sorted {
-                    $0.completedDate ?? Date() > $1.completedDate ?? Date()
-                }
-                
-                self?.delegate?.reasonsSuccessfullyLoaded()
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .failure(_):
+                Navigation.noReasonsAvailable()
             }
         }
     }

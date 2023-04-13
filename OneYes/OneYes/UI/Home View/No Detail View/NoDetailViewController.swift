@@ -12,6 +12,7 @@ class NoDetailViewController: UIViewController {
     //MARK: - OUTLETS
     @IBOutlet weak var reasonStartDateLabel: UILabel!
     @IBOutlet weak var reasonTitleLabel: UILabel!
+    @IBOutlet weak var noCountCircleLabel: UILabel!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noLogCountLabel: UILabel!
@@ -50,10 +51,17 @@ class NoDetailViewController: UIViewController {
         guard let reason = noDetailViewModel.reason else { return }
         reasonStartDateLabel.text = reason.startDate.stringValue()
         reasonTitleLabel.text     = reason.title
-        noLogCountLabel.text      = "(\(reason.logs.count))"
+        configureLogCountUI()
         
         UIElements.configureButton(for: noButton)
         UIElements.configureButton(for: yesButton)
+        UIElements.configureCircleLabel(for: noCountCircleLabel)
+    }
+    
+    func configureLogCountUI() {
+        guard let reason = noDetailViewModel.reason else { return }
+        noCountCircleLabel.text = "\(reason.logs.count)"
+        noLogCountLabel.text    = "(\(reason.logs.count))"
     }
     
     func presentNoAlertController() {
@@ -133,6 +141,7 @@ extension NoDetailViewController: NoDetailViewModelDelegate {
     func newLogCreated() {
         self.noDetailViewModel.reloadLogs()
         self.noDetailLogListCollectionView.reloadData()
+        self.configureLogCountUI()
     }
     
     func reasonSuccessfullyHandled() {

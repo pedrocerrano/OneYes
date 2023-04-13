@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CyD-uy-eVC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GPX-lq-3NF">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -376,6 +376,41 @@
             </objects>
             <point key="canvasLocation" x="3554.4000000000001" y="-589.65517241379314"/>
         </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="hSM-aL-hCq">
+            <objects>
+                <viewController storyboardIdentifier="Onboarding" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AGV-6z-M3f" customClass="OnboardingViewController" customModule="OneYes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="acW-RS-GPG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSi-to-aHc">
+                                <rect key="frame" x="8" y="205.5" width="359" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="k0J-sv-jgQ"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="M7n-DW-rxN" kind="embed" id="yQu-4h-Mem"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ANq-Io-QdG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WSi-to-aHc" firstAttribute="centerY" secondItem="ANq-Io-QdG" secondAttribute="centerY" constant="-80" id="1SB-XG-3eP"/>
+                            <constraint firstItem="WSi-to-aHc" firstAttribute="leading" secondItem="ANq-Io-QdG" secondAttribute="leading" constant="8" id="Bpu-WC-1TU"/>
+                            <constraint firstItem="ANq-Io-QdG" firstAttribute="trailing" secondItem="WSi-to-aHc" secondAttribute="trailing" constant="8" id="NOM-46-d7W"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HM7-15-Hg6"/>
+                    <connections>
+                        <outlet property="onboardingQuoteAndNeedContainerView" destination="WSi-to-aHc" id="pq9-ps-YdT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QGn-gH-y0G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367" y="-769"/>
+        </scene>
         <!--Quote And Need View Controller-->
         <scene sceneID="vCD-x7-bbJ">
             <objects>
@@ -712,6 +747,69 @@
             <point key="canvasLocation" x="3554.4000000000001" y="113.79310344827587"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="MzD-I3-06a">
+            <objects>
+                <navigationController storyboardIdentifier="OnboardingNavController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GPX-lq-3NF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2AD-Lh-S1X">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AGV-6z-M3f" kind="relationship" relationship="rootViewController" id="6Gx-72-Waq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NV4-tS-UtN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-393" y="-770"/>
+        </scene>
+        <!--Onboarding Quote And Need View Controller-->
+        <scene sceneID="TYi-gh-xrb">
+            <objects>
+                <viewController id="M7n-DW-rxN" customClass="OnboardingQuoteAndNeedViewController" customModule="OneYes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="42x-L6-rG2">
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="160"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote of the Day Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg3-6M-0tV">
+                                <rect key="frame" x="12" y="2" width="335" height="106"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Today, I need a yes for..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XFw-cr-3lV">
+                                <rect key="frame" x="12" y="110" width="335" height="42"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="PqO-or-OK7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IWP-3r-mIs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XFw-cr-3lV" firstAttribute="leading" secondItem="IWP-3r-mIs" secondAttribute="leading" constant="12" id="C1T-KM-ZE4"/>
+                            <constraint firstItem="IWP-3r-mIs" firstAttribute="trailing" secondItem="Mg3-6M-0tV" secondAttribute="trailing" constant="12" id="FQV-TT-96d"/>
+                            <constraint firstItem="XFw-cr-3lV" firstAttribute="top" secondItem="Mg3-6M-0tV" secondAttribute="bottom" constant="2" id="gqv-Lb-Kfn"/>
+                            <constraint firstItem="IWP-3r-mIs" firstAttribute="trailing" secondItem="XFw-cr-3lV" secondAttribute="trailing" constant="12" id="kZG-P1-T00"/>
+                            <constraint firstItem="Mg3-6M-0tV" firstAttribute="top" secondItem="42x-L6-rG2" secondAttribute="top" constant="2" id="sMg-Oe-TyJ"/>
+                            <constraint firstItem="IWP-3r-mIs" firstAttribute="bottom" secondItem="XFw-cr-3lV" secondAttribute="bottom" constant="8" id="svf-Xk-OBU"/>
+                            <constraint firstItem="Mg3-6M-0tV" firstAttribute="leading" secondItem="IWP-3r-mIs" secondAttribute="leading" constant="12" id="yPm-4Y-bZb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="motivationalQuoteLabel" destination="Mg3-6M-0tV" id="Ccs-RA-h4A"/>
+                        <outlet property="reasonTitleTextField" destination="XFw-cr-3lV" id="Hyi-Hq-TLp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kz8-QM-ZEU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="-771"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="1MB-dk-tEl">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CyD-uy-eVC" sceneMemberID="viewController">
@@ -729,22 +827,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSM-Ey-cjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="17.991004497751124"/>
-        </scene>
-        <!--OnboardingNavController-->
-        <scene sceneID="4s9-Ug-Ekn">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="OnboardingNavController" storyboardName="Onboarding" referencedIdentifier="OnboardingNavController" id="BSc-8w-X26" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xED-TQ-AjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="945" y="-590"/>
-        </scene>
-        <!--Onboarding-->
-        <scene sceneID="0J6-Ly-IUY">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Onboarding" storyboardName="Onboarding" referencedIdentifier="Onboarding" id="R9X-aa-UGY" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zHs-b1-lWd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1295" y="-590"/>
         </scene>
     </scenes>
     <resources>
