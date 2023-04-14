@@ -45,7 +45,7 @@ class YesDetailViewController: UIViewController {
         reasonTitleLabel.text     = reason.title
         noLogCountLabel.text      = "(\(reason.logs.count))"
         
-        UIElements.configureButton(for: completedButton)
+        UIElements.configureButton(for: completedButton, withColor: UIElements.Colors.oneYesGreen)
     }
     
 } //: CLASS
