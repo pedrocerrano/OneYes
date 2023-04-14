@@ -5,7 +5,7 @@
 //  Created by iMac Pro on 4/5/23.
 //
 
-import Foundation
+import UIKit
 
 protocol YesListViewModelDelegate: AnyObject {
     func reasonsSuccessfullyLoaded()
@@ -42,5 +42,12 @@ class YesListViewModel {
                 Navigation.noReasonsAvailable()
             }
         }
+    }
+    
+    func styleYesListHeaderLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .listTitleBold("Got the ")
+            .listTitleBoldGreen("YES")
+            .listTitleNormal("!")
     }
 }

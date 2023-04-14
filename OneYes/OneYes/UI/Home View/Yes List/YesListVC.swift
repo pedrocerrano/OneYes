@@ -11,7 +11,8 @@ class YesListVC: UIViewController {
 
     //MARK: - OUTLETS
     @IBOutlet weak var yesListCollectionView: UICollectionView!
-
+    @IBOutlet weak var yesListHeaderLabel: UILabel!
+    
     
     //MARK: - PROPERTIES
     var yesListViewModel: YesListViewModel!
@@ -23,11 +24,17 @@ class YesListVC: UIViewController {
         self.yesListCollectionView.dataSource = self
         self.yesListCollectionView.delegate   = self
         yesListViewModel = YesListViewModel(delegate: self)
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         yesListViewModel.loadYesReasons()
+    }
+    
+    //MARK: - FUNCTIONS
+    func configureUI() {
+        yesListViewModel.styleYesListHeaderLabel(for: yesListHeaderLabel)
     }
     
 

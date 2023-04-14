@@ -9,6 +9,10 @@ import UIKit
 
 struct UIElements {
     
+    struct Colors {
+        static let oneYesGreen = UIColor(red: 0/255, green: 166/255, blue: 81/255, alpha: 1)
+    }
+    
     static func configureButton(for button: UIButton) {
         let height                 = button.frame.height
         button.layer.cornerRadius  = height/2
