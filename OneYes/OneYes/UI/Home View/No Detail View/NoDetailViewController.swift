@@ -15,6 +15,7 @@ class NoDetailViewController: UIViewController {
     @IBOutlet weak var noCountCircleLabel: UILabel!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var finallyLabel: UILabel!
     @IBOutlet weak var noLogTitleLabel: UILabel!
     @IBOutlet weak var noLogCountLabel: UILabel!
     @IBOutlet weak var noDetailLogListCollectionView: UICollectionView!
@@ -54,10 +55,12 @@ class NoDetailViewController: UIViewController {
         reasonTitleLabel.text     = reason.title
         configureLogCountUI()
         
-        UIElements.configureButton(for: noButton, withColor: UIElements.Colors.oneYesRed)
-        UIElements.configureButton(for: yesButton, withColor: UIElements.Colors.oneYesGreen)
         UIElements.configureCircleLabel(for: noCountCircleLabel, withColor: .label)
         noCountCircleLabel.textColor = .systemBackground
+        
+        UIElements.configureButton(for: noButton, withColor: UIElements.Colors.oneYesRed)
+        UIElements.configureButton(for: yesButton, withColor: UIElements.Colors.oneYesGreen)
+        noDetailViewModel.styleFinallyLabel(for: finallyLabel)
         noDetailViewModel.styleNoDetailLogTitleLabel(for: noLogTitleLabel)
     }
     

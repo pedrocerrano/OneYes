@@ -21,6 +21,8 @@ struct UIElements {
         button.layer.shadowOpacity   = Constants.DetailButtonUI.shadowOpacity
         button.layer.shadowRadius    = Constants.DetailButtonUI.shadowRadius
         button.layer.shadowOffset    = Constants.DetailButtonUI.shadowOffset
+        button.titleLabel?.shadowColor = Constants.DetailButtonUI.labelShadowColor
+        button.titleLabel?.shadowOffset = Constants.DetailButtonUI.labelShadowOffset
         button.layer.backgroundColor = color.cgColor
         button.layer.masksToBounds   = Constants.DetailButtonUI.masksToBounds
     }

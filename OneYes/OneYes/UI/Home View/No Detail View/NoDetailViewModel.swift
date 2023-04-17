@@ -82,4 +82,9 @@ class NoDetailViewModel {
             .detailNoLogCountBoldRed("NO")
             .detailNoLogCountBold(" log")
     }
+    
+    func styleFinallyLabel(for label: UILabel) {
+        label.shadowColor  = Constants.DetailButtonUI.labelShadowColor
+        label.shadowOffset = Constants.DetailButtonUI.labelShadowOffset
+    }
 }
