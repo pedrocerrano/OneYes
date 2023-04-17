@@ -10,8 +10,9 @@ import UIKit
 class YesListVC: UIViewController {
 
     //MARK: - OUTLETS
+    @IBOutlet weak var yesListLeadingHeaderLabel: UILabel!
+    @IBOutlet weak var yesListTrailingHeaderLabel: UILabel!
     @IBOutlet weak var yesListCollectionView: UICollectionView!
-    @IBOutlet weak var yesListHeaderLabel: UILabel!
     
     
     //MARK: - PROPERTIES
@@ -34,7 +35,9 @@ class YesListVC: UIViewController {
     
     //MARK: - FUNCTIONS
     func configureUI() {
-        yesListViewModel.styleYesListHeaderLabel(for: yesListHeaderLabel)
+        view.layer.cornerRadius = Constants.HomeScreenUI.cornerRadius
+        yesListViewModel.styleYesListLeadingHeaderLabel(for: yesListLeadingHeaderLabel)
+        yesListViewModel.styleYesListTrailingHeaderLabel(for: yesListTrailingHeaderLabel)
     }
     
 

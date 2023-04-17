@@ -24,11 +24,16 @@ class QuoteAndNeedViewController: UIViewController {
         reasonTitleTextField.delegate = self
         quoteAndNeedViewModel = QuoteAndNeedViewModel()
         configureQuote()
+        configureUI()
     }
     
     //MARK: - FUNCTIONS
     func configureQuote() {
         QuoteData.loadRandomQuote(for: motivationalQuoteLabel)
+    }
+    
+    func configureUI() {
+        view.layer.cornerRadius = Constants.HomeScreenUI.cornerRadius
     }
 } //: CLASS
 

@@ -44,10 +44,16 @@ class YesListViewModel {
         }
     }
     
-    func styleYesListHeaderLabel(for label: UILabel) {
+    func styleYesListLeadingHeaderLabel(for label: UILabel) {
         label.attributedText = NSMutableAttributedString()
-            .listTitleBold("Got the ")
-            .listTitleBoldGreen("YES")
-            .listTitleNormal("!")
+            .listLeadingHeaderBold("Got the ")
+            .listLeadingHeaderBoldGreen("YES")
+            .listLeadingHeaderNormal("!")
+    }
+    
+    func styleYesListTrailingHeaderLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .listTrailingHeaderBoldGreen("YES")
+            .listTrailingHeaderBold(" date/no's")
     }
 }

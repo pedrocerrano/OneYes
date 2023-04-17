@@ -20,6 +20,12 @@ class NoListCollectionViewCell: UICollectionViewCell {
         noListReasonLabel.text    = reason.title
         noListStartDateLabel.text = reason.startDate.stringValue()
         noListLogCountLabel.text  = "\(reason.logs.count)"
+        
+        if reason.logs.count == 0 {
+            noListLogCountLabel.textColor = .label
+        } else {
+            noListLogCountLabel.textColor = UIElements.Colors.oneYesRed
+        }
     }
     
 }

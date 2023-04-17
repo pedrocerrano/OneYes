@@ -10,10 +10,9 @@ import UIKit
 class NoListVC: UIViewController {
 
     //MARK: - OUTLETS
+    @IBOutlet weak var noListLeadingHeaderLabel: UILabel!
+    @IBOutlet weak var noListTrailingHeaderLabel: UILabel!
     @IBOutlet weak var noListCollectionView: UICollectionView!
-    @IBOutlet weak var noListTitleLabel: UILabel!
-    @IBOutlet weak var noListStartDateLabel: UILabel!
-    @IBOutlet weak var noListLogCountLabel: UILabel!
     
     
     //MARK: - PROPERTIES
@@ -27,6 +26,7 @@ class NoListVC: UIViewController {
         noListCollectionView.delegate   = self
         noListViewModel = NoListViewModel(delegate: self)
         setupNotifications()
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +42,12 @@ class NoListVC: UIViewController {
     
     @objc func newReasonCreated() {
         noListViewModel.loadReasons()
-        noListCollectionView.reloadData()
+    }
+    
+    func configureUI() {
+        view.layer.cornerRadius = Constants.HomeScreenUI.cornerRadius
+        noListViewModel.styleNoListLeadingHeaderLabel(for: noListLeadingHeaderLabel)
+        noListViewModel.styleNoListTrailingHeaderLabel(for: noListTrailingHeaderLabel)
     }
     
 

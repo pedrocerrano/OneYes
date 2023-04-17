@@ -5,7 +5,7 @@
 //  Created by iMac Pro on 4/5/23.
 //
 
-import Foundation
+import UIKit
 
 protocol NoListViewModelDelegate: AnyObject {
     func dataLoadedSuccessfully()
@@ -40,5 +40,19 @@ class NoListViewModel {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func styleNoListLeadingHeaderLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .listLeadingHeaderBold("Still just ")
+            .listLeadingHeaderBoldRed("NO")
+            .listLeadingHeaderBold("'s...")
+    }
+    
+    func styleNoListTrailingHeaderLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .listTrailingHeaderBold("first ")
+            .listTrailingHeaderBoldRed("NO")
+            .listTrailingHeaderBold(" date/no's")
     }
 }

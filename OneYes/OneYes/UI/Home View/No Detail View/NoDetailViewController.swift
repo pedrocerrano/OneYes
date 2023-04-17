@@ -53,9 +53,10 @@ class NoDetailViewController: UIViewController {
         reasonTitleLabel.text     = reason.title
         configureLogCountUI()
         
-        UIElements.configureButton(for: noButton, withColor: UIElements.Colors.oneYesGreen)
-        UIElements.configureButton(for: yesButton, withColor: UIElements.Colors.oneYesDarkRed)
-        UIElements.configureCircleLabel(for: noCountCircleLabel, withColor: UIElements.Colors.oneYesRichBlue)
+        UIElements.configureButton(for: noButton, withColor: UIElements.Colors.oneYesRed)
+        UIElements.configureButton(for: yesButton, withColor: UIElements.Colors.oneYesGreen)
+        UIElements.configureCircleLabel(for: noCountCircleLabel, withColor: .label)
+        noCountCircleLabel.textColor = .systemBackground
     }
     
     func configureLogCountUI() {
