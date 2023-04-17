@@ -5,7 +5,7 @@
 //  Created by iMac Pro on 4/5/23.
 //
 
-import Foundation
+import UIKit
 
 protocol NoDetailViewModelDelegate: AnyObject {
     func newLogCreated()
@@ -75,5 +75,11 @@ class NoDetailViewModel {
                 }
             }
         }
+    }
+    
+    func styleNoDetailLogTitleLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .detailNoLogCountBoldRed("NO")
+            .detailNoLogCountBold(" log")
     }
 }

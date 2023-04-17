@@ -12,8 +12,6 @@ struct UIElements {
     struct Colors {
         static let oneYesGreen    = UIColor(red: 0/255, green: 166/255, blue: 81/255, alpha: 1)
         static let oneYesRed      = UIColor(red: 166/255, green: 0, blue: 2/255, alpha: 1)
-        static let oneYesBlue     = UIColor(red: 0/255, green: 85/255, blue: 166/255, alpha: 1)
-        static let oneYesRichBlue = UIColor(red: 0/255, green: 2/255, blue: 166/255, alpha: 1)
     }
     
     static func configureButton(for button: UIButton, withColor color: UIColor) {

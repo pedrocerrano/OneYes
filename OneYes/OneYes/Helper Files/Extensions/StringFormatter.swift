@@ -33,6 +33,7 @@ extension NSMutableAttributedString {
         return self
     }
     
+    
     //MARK: - LIST LEADING HEADER
     var listLeadingHeaderFontSize: CGFloat { return 17 }
     var listLeadingHeaderNormalFont: UIFont { return UIFont.systemFont(ofSize: listLeadingHeaderFontSize)}
@@ -52,7 +53,7 @@ extension NSMutableAttributedString {
     
     func listLeadingHeaderBoldGreen(_ value: String) -> NSMutableAttributedString {
         let normalAttributes: [NSAttributedString.Key : Any] = [
-            .font : listLeadingHeaderBoldFont,
+            .font            : listLeadingHeaderBoldFont,
             .foregroundColor : UIElements.Colors.oneYesGreen
         ]
         self.append(NSAttributedString(string: value, attributes: normalAttributes))
@@ -61,12 +62,13 @@ extension NSMutableAttributedString {
     
     func listLeadingHeaderBoldRed(_ value: String) -> NSMutableAttributedString {
         let normalAttributes: [NSAttributedString.Key : Any] = [
-            .font : listLeadingHeaderBoldFont,
+            .font            : listLeadingHeaderBoldFont,
             .foregroundColor : UIElements.Colors.oneYesRed
         ]
         self.append(NSAttributedString(string: value, attributes: normalAttributes))
         return self
     }
+    
     
     //MARK: - LIST TRAILING HEADER
     var listTrailingHeaderFontSize: CGFloat { return 13 }
@@ -80,7 +82,7 @@ extension NSMutableAttributedString {
     
     func listTrailingHeaderBoldGreen(_ value: String) -> NSMutableAttributedString {
         let normalAttributes: [NSAttributedString.Key : Any] = [
-            .font : listTrailingHeaderBoldFont,
+            .font            : listTrailingHeaderBoldFont,
             .foregroundColor : UIElements.Colors.oneYesGreen
         ]
         self.append(NSAttributedString(string: value, attributes: normalAttributes))
@@ -89,7 +91,27 @@ extension NSMutableAttributedString {
     
     func listTrailingHeaderBoldRed(_ value: String) -> NSMutableAttributedString {
         let normalAttributes: [NSAttributedString.Key : Any] = [
-            .font : listTrailingHeaderBoldFont,
+            .font            : listTrailingHeaderBoldFont,
+            .foregroundColor : UIElements.Colors.oneYesRed
+        ]
+        self.append(NSAttributedString(string: value, attributes: normalAttributes))
+        return self
+    }
+    
+    
+    //MARK: - DETAIL NO LOG COUNT
+    var detailNoLogCountFontSize: CGFloat { return 16 }
+    var detailNoLogCountBoldFont: UIFont { return UIFont.boldSystemFont(ofSize: detailNoLogCountFontSize)}
+    
+    func detailNoLogCountBold(_ value: String) -> NSMutableAttributedString {
+        let normalAttributes: [NSAttributedString.Key : Any] = [.font : detailNoLogCountBoldFont]
+        self.append(NSAttributedString(string: value, attributes: normalAttributes))
+        return self
+    }
+    
+    func detailNoLogCountBoldRed(_ value: String) -> NSMutableAttributedString {
+        let normalAttributes: [NSAttributedString.Key : Any] = [
+            .font            : detailNoLogCountBoldFont,
             .foregroundColor : UIElements.Colors.oneYesRed
         ]
         self.append(NSAttributedString(string: value, attributes: normalAttributes))
