@@ -10,11 +10,13 @@ import UIKit
 class YesDetailViewController: UIViewController {
 
     //MARK: - OUTLETS
-    @IBOutlet weak var reasonStartDateLabel: UILabel!
+    @IBOutlet weak var firstNoReceivedLabel: UILabel!
+    @IBOutlet weak var firstNoReceivedStartDateLabel: UILabel!
+    @IBOutlet weak var yesReceivedLabel: UILabel!
     @IBOutlet weak var yesReceivedDateLabel: UILabel!
     @IBOutlet weak var reasonTitleLabel: UILabel!
     @IBOutlet weak var completedButton: UIButton!
-    @IBOutlet weak var noLogCountLabel: UILabel!
+    @IBOutlet weak var noLogCountTitleLabel: UILabel!
     @IBOutlet weak var completedCollectionView: UICollectionView!
     
     
@@ -40,12 +42,16 @@ class YesDetailViewController: UIViewController {
     //MARK: - FUNCTIONS
     func configureUI() {
         guard let reason = yesDetailViewModel.reason else { return }
-        reasonStartDateLabel.text = reason.startDate.stringValue()
-        yesReceivedDateLabel.text = reason.completedDate?.stringValue()
-        reasonTitleLabel.text     = reason.title
-        noLogCountLabel.text      = "(\(reason.logs.count))"
+        yesDetailViewModel.styleFirstNoReceivedLabel(for: firstNoReceivedLabel)
+        firstNoReceivedStartDateLabel.text = reason.startDate.stringValue()
         
+        yesDetailViewModel.styleYesReceivedLabel(for: yesReceivedLabel)
+        yesDetailViewModel.styleYesReceivedDateLabel(for: yesReceivedDateLabel)
+        
+        reasonTitleLabel.text     = reason.title
         UIElements.configureButton(for: completedButton, withColor: UIElements.Colors.oneYesGreen)
+        
+        yesDetailViewModel.styleNoLogCountLabel(for: noLogCountTitleLabel)
     }
     
 } //: CLASS

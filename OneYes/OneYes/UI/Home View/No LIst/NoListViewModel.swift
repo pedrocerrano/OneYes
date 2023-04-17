@@ -51,8 +51,9 @@ class NoListViewModel {
     
     func styleNoListTrailingHeaderLabel(for label: UILabel) {
         label.attributedText = NSMutableAttributedString()
-            .listTrailingHeaderBold("first ")
+            .listTrailingHeaderBold("first No")
+            .listTrailingHeaderBold(" date/")
             .listTrailingHeaderBoldRed("NO")
-            .listTrailingHeaderBold(" date/no's")
+            .listTrailingHeaderBold("'s")
     }
 }

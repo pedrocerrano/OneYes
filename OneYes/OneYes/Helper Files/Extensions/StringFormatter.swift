@@ -117,4 +117,33 @@ extension NSMutableAttributedString {
         self.append(NSAttributedString(string: value, attributes: normalAttributes))
         return self
     }
+    
+    
+    //MARK: - COMPLETED DATES
+    var completedDatesFontSize: CGFloat { return 14 }
+    var completedDatesNormalFont: UIFont { return UIFont.systemFont(ofSize: completedDatesFontSize)}
+    
+    func completedDatesNormal(_ value: String) -> NSMutableAttributedString {
+        let normalAttributes: [NSAttributedString.Key : Any] = [.font : completedDatesNormalFont]
+        self.append(NSAttributedString(string: value, attributes: normalAttributes))
+        return self
+    }
+    
+    func completedDatesNormalGreen(_ value: String) -> NSMutableAttributedString {
+        let normalAttributes: [NSAttributedString.Key : Any] = [
+            .font            : completedDatesNormalFont,
+            .foregroundColor : UIElements.Colors.oneYesGreen
+        ]
+        self.append(NSAttributedString(string: value, attributes: normalAttributes))
+        return self
+    }
+    
+    func completedDatesNormalRed(_ value: String) -> NSMutableAttributedString {
+        let normalAttributes: [NSAttributedString.Key : Any] = [
+            .font            : completedDatesNormalFont,
+            .foregroundColor : UIElements.Colors.oneYesRed
+        ]
+        self.append(NSAttributedString(string: value, attributes: normalAttributes))
+        return self
+    }
 }

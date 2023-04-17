@@ -5,7 +5,7 @@
 //  Created by iMac Pro on 4/6/23.
 //
 
-import Foundation
+import UIKit
 
 protocol YesDetailViewModelDelegate: AnyObject {
     func reasonSuccessfullyDeleted()
@@ -42,5 +42,33 @@ class YesDetailViewModel {
                 }
             }
         }
+    }
+    
+    
+    func styleFirstNoReceivedLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .completedDatesNormal("First ")
+            .completedDatesNormalRed("NO")
+            .completedDatesNormal(" received on")
+    }
+    
+    func styleYesReceivedLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .completedDatesNormalGreen("YES")
+            .completedDatesNormal(" received on")
+    }
+    
+    func styleYesReceivedDateLabel(for label: UILabel) {
+        guard let yesReceivedDate = reason?.completedDate?.stringValue() else { return }
+        label.attributedText = NSMutableAttributedString()
+            .completedDatesNormalGreen("\(yesReceivedDate)")
+    }
+    
+    func styleNoLogCountLabel(for label: UILabel) {
+        guard let noLogCount = reason?.logs.count else { return }
+        label.attributedText = NSMutableAttributedString()
+            .detailNoLogCountBoldRed("NO")
+            .detailNoLogCountBold(" log ")
+            .detailNoLogCountBold("(\(noLogCount))")
     }
 }

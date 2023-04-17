@@ -53,7 +53,8 @@ class YesListViewModel {
     
     func styleYesListTrailingHeaderLabel(for label: UILabel) {
         label.attributedText = NSMutableAttributedString()
-            .listTrailingHeaderBoldGreen("YES")
-            .listTrailingHeaderBold(" date/no's")
+            .listTrailingHeaderBold("Yes date/")
+            .listTrailingHeaderBoldGreen("NO")
+            .listTrailingHeaderBold("'s")
     }
 }
