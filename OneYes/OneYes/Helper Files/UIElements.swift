@@ -15,16 +15,14 @@ struct UIElements {
     }
     
     static func configureButton(for button: UIButton, withColor color: UIColor) {
-        let height                   = button.frame.height
-        button.layer.cornerRadius    = height/2
-        button.layer.shadowColor     = Constants.DetailButtonUI.shadowColor
-        button.layer.shadowOpacity   = Constants.DetailButtonUI.shadowOpacity
-        button.layer.shadowRadius    = Constants.DetailButtonUI.shadowRadius
-        button.layer.shadowOffset    = Constants.DetailButtonUI.shadowOffset
-        button.titleLabel?.shadowColor = Constants.DetailButtonUI.labelShadowColor
+        button.layer.shadowColor        = Constants.DetailButtonUI.shadowColor
+        button.layer.shadowOpacity      = Constants.DetailButtonUI.shadowOpacity
+        button.layer.shadowRadius       = Constants.DetailButtonUI.shadowRadius
+        button.layer.shadowOffset       = Constants.DetailButtonUI.shadowOffset
+        button.titleLabel?.shadowColor  = Constants.DetailButtonUI.labelShadowColor
         button.titleLabel?.shadowOffset = Constants.DetailButtonUI.labelShadowOffset
-        button.layer.backgroundColor = color.cgColor
-        button.layer.masksToBounds   = Constants.DetailButtonUI.masksToBounds
+        button.layer.backgroundColor    = color.cgColor
+        button.layer.masksToBounds      = Constants.DetailButtonUI.masksToBounds
     }
     
     static func configureCircleLabel(for label: UILabel, withColor color: UIColor) {

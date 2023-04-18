@@ -26,6 +26,12 @@ class NoDetailViewController: UIViewController {
     
     
     //MARK: - LIFECYCLE
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.noButton.layer.cornerRadius = noButton.frame.height / 2
+        self.yesButton.layer.cornerRadius = yesButton.frame.height / 2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.noDetailLogListCollectionView.dataSource = self
@@ -134,7 +140,7 @@ extension NoDetailViewController: UICollectionViewDataSource {
 } //: CV DataSource
 
 
-//MARK: - EXT: CollectionViewDelegateFlowLayout
+//MARK: - EXT: CollectionView Delegate Flow Layout
 extension NoDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = noDetailLogListCollectionView.frame.width
