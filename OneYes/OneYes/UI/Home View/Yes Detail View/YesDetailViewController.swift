@@ -50,7 +50,7 @@ class YesDetailViewController: UIViewController {
         
         reasonTitleLabel.text     = reason.title
         UIElements.configureButton(for: completedButton, withColor: UIElements.Colors.oneYesGreen)
-//        completedButton.isUserInteractionEnabled = false
+        completedButton.isUserInteractionEnabled = false
         
         yesDetailViewModel.styleNoLogCountLabel(for: noLogCountTitleLabel)
     }
