@@ -25,6 +25,12 @@ class YesDetailViewController: UIViewController {
     
     
     //MARK: - LIFECYCLE
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.completedButton.layer.cornerRadius = completedButton.frame.height / 2
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.completedCollectionView.dataSource = self
