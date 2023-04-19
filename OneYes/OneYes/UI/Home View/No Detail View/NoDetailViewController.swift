@@ -15,6 +15,8 @@ class NoDetailViewController: UIViewController {
     @IBOutlet weak var noCountCircleLabel: UILabel!
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var finallyLabel: UILabel!
+    @IBOutlet weak var noLogTitleLabel: UILabel!
     @IBOutlet weak var noLogCountLabel: UILabel!
     @IBOutlet weak var noDetailLogListCollectionView: UICollectionView!
     
@@ -24,6 +26,12 @@ class NoDetailViewController: UIViewController {
     
     
     //MARK: - LIFECYCLE
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.noButton.layer.cornerRadius = noButton.frame.height / 2
+        self.yesButton.layer.cornerRadius = yesButton.frame.height / 2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.noDetailLogListCollectionView.dataSource = self
@@ -53,15 +61,20 @@ class NoDetailViewController: UIViewController {
         reasonTitleLabel.text     = reason.title
         configureLogCountUI()
         
-        UIElements.configureButton(for: noButton)
-        UIElements.configureButton(for: yesButton)
-        UIElements.configureCircleLabel(for: noCountCircleLabel)
+        UIElements.configureCircleLabel(for: noCountCircleLabel, withColor: .label)
+        noCountCircleLabel.textColor = .systemBackground
+        
+        UIElements.configureButton(for: noButton, withColor: UIElements.Colors.oneYesRed)
+        UIElements.configureButton(for: yesButton, withColor: UIElements.Colors.oneYesGreen)
+        noDetailViewModel.styleFinallyLabel(for: finallyLabel)
+        noDetailViewModel.styleNoDetailLogTitleLabel(for: noLogTitleLabel)
     }
     
     func configureLogCountUI() {
         guard let reason = noDetailViewModel.reason else { return }
         noCountCircleLabel.text = "\(reason.logs.count)"
-        noLogCountLabel.text    = "(\(reason.logs.count))"
+        noLogCountLabel.attributedText = NSMutableAttributedString()
+            .detailNoLogCountBold("(\(reason.logs.count))")
     }
     
     func presentNoAlertController() {
@@ -127,7 +140,7 @@ extension NoDetailViewController: UICollectionViewDataSource {
 } //: CV DataSource
 
 
-//MARK: - EXT: CollectionViewDelegateFlowLayout
+//MARK: - EXT: CollectionView Delegate Flow Layout
 extension NoDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = noDetailLogListCollectionView.frame.width

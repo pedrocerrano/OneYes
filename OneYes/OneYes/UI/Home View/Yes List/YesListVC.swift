@@ -10,8 +10,10 @@ import UIKit
 class YesListVC: UIViewController {
 
     //MARK: - OUTLETS
+    @IBOutlet weak var yesListLeadingHeaderLabel: UILabel!
+    @IBOutlet weak var yesListTrailingHeaderLabel: UILabel!
     @IBOutlet weak var yesListCollectionView: UICollectionView!
-
+    
     
     //MARK: - PROPERTIES
     var yesListViewModel: YesListViewModel!
@@ -23,11 +25,19 @@ class YesListVC: UIViewController {
         self.yesListCollectionView.dataSource = self
         self.yesListCollectionView.delegate   = self
         yesListViewModel = YesListViewModel(delegate: self)
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         yesListViewModel.loadYesReasons()
+    }
+    
+    //MARK: - FUNCTIONS
+    func configureUI() {
+        view.layer.cornerRadius = Constants.HomeScreenUI.cornerRadius
+        yesListViewModel.styleYesListLeadingHeaderLabel(for: yesListLeadingHeaderLabel)
+        yesListViewModel.styleYesListTrailingHeaderLabel(for: yesListTrailingHeaderLabel)
     }
     
 

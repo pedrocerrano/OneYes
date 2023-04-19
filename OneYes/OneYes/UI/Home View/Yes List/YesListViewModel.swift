@@ -5,7 +5,7 @@
 //  Created by iMac Pro on 4/5/23.
 //
 
-import Foundation
+import UIKit
 
 protocol YesListViewModelDelegate: AnyObject {
     func reasonsSuccessfullyLoaded()
@@ -29,22 +29,32 @@ class YesListViewModel {
         service.loadReasonsFromFirestore { [weak self] result in
             switch result {
             case .success(let yesReasons):
-                if yesReasons.isEmpty {
-                    Navigation.noReasonsAvailable()
-                } else {
-                    let filteredYesReasons = yesReasons.filter { yesReasons in
-                        yesReasons.isCompleted == true
-                    }
-                    
-                    self?.reasons = filteredYesReasons.sorted {
-                        $0.completedDate ?? Date() > $1.completedDate ?? Date()
-                    }
-                    
-                    self?.delegate?.reasonsSuccessfullyLoaded()
+                let filteredYesReasons = yesReasons.filter { yesReasons in
+                    yesReasons.isCompleted == true
                 }
+                
+                self?.reasons = filteredYesReasons.sorted {
+                    $0.completedDate ?? Date() > $1.completedDate ?? Date()
+                }
+                
+                self?.delegate?.reasonsSuccessfullyLoaded()
             case .failure(_):
                 Navigation.noReasonsAvailable()
             }
         }
+    }
+    
+    func styleYesListLeadingHeaderLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .listLeadingHeaderBold("Got the ")
+            .listLeadingHeaderBoldGreen("YES")
+            .listLeadingHeaderNormal("!")
+    }
+    
+    func styleYesListTrailingHeaderLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .listTrailingHeaderBold("Yes date/")
+            .listTrailingHeaderBoldGreen("NO")
+            .listTrailingHeaderBold("'s")
     }
 }

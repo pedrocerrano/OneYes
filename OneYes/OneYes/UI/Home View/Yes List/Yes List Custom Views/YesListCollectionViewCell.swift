@@ -17,8 +17,9 @@ class YesListCollectionViewCell: UICollectionViewCell {
     
     //MARK: - FUNCTIONS
     func configureUI(withReason reason: Reason) {
-        yesListReasonLabel.text = reason.title
-        yesCompletedDateLabel.text = reason.completedDate?.stringValue()
-        yesListNoLogCountLabel.text = "\(reason.logs.count)"
+        yesListReasonLabel.text          = reason.title
+        yesCompletedDateLabel.text       = reason.completedDate?.stringValue()
+        yesListNoLogCountLabel.text      = "\(reason.logs.count)"
+        yesListNoLogCountLabel.textColor = UIElements.Colors.oneYesGreen
     }
 }

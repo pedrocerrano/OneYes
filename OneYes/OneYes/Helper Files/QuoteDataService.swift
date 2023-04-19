@@ -40,8 +40,8 @@ struct QuoteData {
         let author = quotesData[index].author
         quoteString.text = "\"\(quote)\" -\(author)"
         quoteString.attributedText = NSMutableAttributedString()
-            .italics("\"\(quote)\"")
-            .bold(" -\(author)")
+            .quoteItalics("\"\(quote)\"")
+            .quoteBold(" -\(author)")
     }
 }
 

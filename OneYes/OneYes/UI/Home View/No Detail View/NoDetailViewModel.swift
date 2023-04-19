@@ -5,7 +5,7 @@
 //  Created by iMac Pro on 4/5/23.
 //
 
-import Foundation
+import UIKit
 
 protocol NoDetailViewModelDelegate: AnyObject {
     func newLogCreated()
@@ -61,8 +61,30 @@ class NoDetailViewModel {
     func deleteReason() {
         if let reason = reason {
             service.deleteFromFirestore(from: reason) {
-                self.delegate?.reasonSuccessfullyHandled()
+                self.service.loadReasonsFromFirestore { result in
+                    switch result {
+                    case .success(let reasons):
+                        if reasons.isEmpty {
+                            Navigation.noReasonsAvailable()
+                        } else {
+                            self.delegate?.reasonSuccessfullyHandled()
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
             }
         }
+    }
+    
+    func styleNoDetailLogTitleLabel(for label: UILabel) {
+        label.attributedText = NSMutableAttributedString()
+            .detailNoLogCountBoldRed("NO")
+            .detailNoLogCountBold(" log")
+    }
+    
+    func styleFinallyLabel(for label: UILabel) {
+        label.shadowColor  = Constants.DetailButtonUI.labelShadowColor
+        label.shadowOffset = Constants.DetailButtonUI.labelShadowOffset
     }
 }
