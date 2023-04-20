@@ -83,6 +83,7 @@ class NoDetailViewController: UIViewController {
                                                   preferredStyle: .alert)
         noAlertController.addTextField { textField in
             textField.placeholder = "Optional Note..."
+            textField.autocapitalizationType = .sentences
         }
         
         let dismissAction     = UIAlertAction(title: "Cancel", style: .cancel)
