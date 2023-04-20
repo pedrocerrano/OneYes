@@ -19,8 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="jzd-Vk-GRB">
+                                <rect key="frame" x="0.0" y="36" width="375" height="611"/>
+                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jJ-2r-O45">
-                                <rect key="frame" x="8" y="36" width="359" height="134"/>
+                                <rect key="frame" x="8" y="48" width="359" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="134" id="kyX-Vo-aMk"/>
                                 </constraints>
@@ -29,7 +32,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxg-ra-SUS">
-                                <rect key="frame" x="8" y="190" width="359" height="220"/>
+                                <rect key="frame" x="8" y="202" width="359" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="LeC-sR-apn"/>
                                 </constraints>
@@ -38,7 +41,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZt-Cd-0AT">
-                                <rect key="frame" x="8" y="430" width="359" height="205"/>
+                                <rect key="frame" x="8" y="442" width="359" height="193"/>
                                 <connections>
                                     <segue destination="RmH-RL-XO4" kind="embed" id="liU-lc-vmx"/>
                                 </connections>
@@ -47,16 +50,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jzd-Vk-GRB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="3Qb-FA-ioG"/>
                             <constraint firstItem="2jJ-2r-O45" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="6P9-hM-epB"/>
-                            <constraint firstItem="2jJ-2r-O45" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="Kkl-ot-bOj"/>
+                            <constraint firstItem="2jJ-2r-O45" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-8" id="Kkl-ot-bOj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jzd-Vk-GRB" secondAttribute="trailing" id="bB2-7w-CZW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2jJ-2r-O45" secondAttribute="trailing" constant="8" id="dua-wc-2KX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cZt-Cd-0AT" secondAttribute="bottom" constant="12" id="e6q-f5-Wtf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cZt-Cd-0AT" secondAttribute="trailing" constant="8" id="h26-FO-4F8"/>
                             <constraint firstItem="Jxg-ra-SUS" firstAttribute="top" secondItem="2jJ-2r-O45" secondAttribute="bottom" constant="20" id="o2m-1C-32A"/>
                             <constraint firstItem="Jxg-ra-SUS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="osr-pK-eGt"/>
+                            <constraint firstItem="jzd-Vk-GRB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qrZ-z0-qBD"/>
                             <constraint firstItem="cZt-Cd-0AT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="uNt-1t-Lez"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jxg-ra-SUS" secondAttribute="trailing" constant="8" id="un8-uB-7wT"/>
                             <constraint firstItem="cZt-Cd-0AT" firstAttribute="top" secondItem="Jxg-ra-SUS" secondAttribute="bottom" constant="20" id="v4N-OP-JuJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jzd-Vk-GRB" secondAttribute="bottom" id="vJs-e5-DrG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fvw-6Y-4O7"/>
@@ -785,6 +792,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="1179" height="2556"/>
         <image name="OneYesCheckmark" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

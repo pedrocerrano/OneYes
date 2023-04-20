@@ -50,7 +50,7 @@ class NoDetailViewController: UIViewController {
     }
     
     @IBAction func deleteReasonButtonTapped(_ sender: Any) {
-        noDetailViewModel.deleteReason()
+        presentDeleteReasonAlertController()
     }
     
     
@@ -113,6 +113,21 @@ class NoDetailViewController: UIViewController {
         yesAlertController.addAction(dismissAction)
         yesAlertController.addAction(confirmYesAction)
         present(yesAlertController, animated: true)
+    }
+    
+    func presentDeleteReasonAlertController() {
+        let deleteReasonAlertController = UIAlertController(title: "Delete Reason",
+                                                            message: "Are you sure?",
+                                                            preferredStyle: .alert)
+        
+        let dismissAction     = UIAlertAction(title: "Cancel", style: .cancel)
+        let confirmNoAction   = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            self.noDetailViewModel.deleteReason()
+        }
+        
+        deleteReasonAlertController.addAction(dismissAction)
+        deleteReasonAlertController.addAction(confirmNoAction)
+        present(deleteReasonAlertController, animated: true)
     }
     
 } //: CLASS

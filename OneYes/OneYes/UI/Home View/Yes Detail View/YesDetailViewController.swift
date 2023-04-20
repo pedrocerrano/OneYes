@@ -41,7 +41,7 @@ class YesDetailViewController: UIViewController {
     
     //MARK: - IB ACTIONS
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        yesDetailViewModel.deleteReason()
+        presentDeleteReasonAlertController()
     }
     
     
@@ -59,6 +59,21 @@ class YesDetailViewController: UIViewController {
         completedButton.isUserInteractionEnabled = false
         
         yesDetailViewModel.styleNoLogCountLabel(for: noLogCountTitleLabel)
+    }
+    
+    func presentDeleteReasonAlertController() {
+        let deleteReasonAlertController = UIAlertController(title: "Delete Reason",
+                                                            message: "Are you sure?",
+                                                            preferredStyle: .alert)
+        
+        let dismissAction     = UIAlertAction(title: "Cancel", style: .cancel)
+        let confirmNoAction   = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            self.yesDetailViewModel.deleteReason()
+        }
+        
+        deleteReasonAlertController.addAction(dismissAction)
+        deleteReasonAlertController.addAction(confirmNoAction)
+        present(deleteReasonAlertController, animated: true)
     }
     
 } //: CLASS
