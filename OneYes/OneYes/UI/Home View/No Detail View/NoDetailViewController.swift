@@ -116,8 +116,8 @@ class NoDetailViewController: UIViewController {
     }
     
     func presentDeleteReasonAlertController() {
-        let deleteReasonAlertController = UIAlertController(title: "Delete Reason",
-                                                            message: "Are you sure?",
+        let deleteReasonAlertController = UIAlertController(title: "Delete",
+                                                            message: "Are you sure? This cannot be undone.",
                                                             preferredStyle: .alert)
         
         let dismissAction     = UIAlertAction(title: "Cancel", style: .cancel)
