@@ -24,6 +24,8 @@
 		29414E1F29E86B1000E3EF79 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29414E1E29E86B1000E3EF79 /* Navigation.swift */; };
 		29414E2229E86E1D00E3EF79 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29414E2029E86E1D00E3EF79 /* Onboarding.storyboard */; };
 		2973BFE729F5C92100177249 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2973BFE629F5C92100177249 /* HomeViewModel.swift */; };
+		2973BFE929F5C9AA00177249 /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2973BFE829F5C9AA00177249 /* Confetti.swift */; };
+		2973BFEB29F5C9C900177249 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2973BFEA29F5C9C900177249 /* ConfettiView.swift */; };
 		297BD63429E8758B001AD022 /* WindowsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BD63329E8758B001AD022 /* WindowsFormatter.swift */; };
 		29A274FE29E71D59008C87CD /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A274FD29E71D59008C87CD /* StringFormatter.swift */; };
 		29C0195629D5DE9F009EC687 /* quotesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 29C0195529D5DE9F009EC687 /* quotesData.json */; };
@@ -66,6 +68,8 @@
 		29414E1E29E86B1000E3EF79 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		29414E2129E86E1D00E3EF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OneYes/Storyboards/Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
 		2973BFE629F5C92100177249 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2973BFE829F5C9AA00177249 /* Confetti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
+		2973BFEA29F5C9C900177249 /* ConfettiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		297BD63329E8758B001AD022 /* WindowsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsFormatter.swift; sourceTree = "<group>"; };
 		29A274FD29E71D59008C87CD /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		29C0195529D5DE9F009EC687 /* quotesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotesData.json; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 				29C0196329D63B42009EC687 /* Reason.swift */,
 				29C0196529D63B77009EC687 /* Log.swift */,
 				29EAC17929D73C30003EDB84 /* Quote.swift */,
+				2973BFE829F5C9AA00177249 /* Confetti.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				290E2F4729DC7EEE006A1049 /* Constants.swift */,
 				29F2066629DF2F9600B3ABA1 /* UIElements.swift */,
 				29414E1E29E86B1000E3EF79 /* Navigation.swift */,
+				2973BFEA29F5C9C900177249 /* ConfettiView.swift */,
 				297BD63529E87C7C001AD022 /* Extensions */,
 				29C0195429D5DE10009EC687 /* Resources */,
 			);
@@ -405,6 +411,7 @@
 				2927A3C229DF73B800DB7F16 /* YesDetailViewModel.swift in Sources */,
 				29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */,
 				29414E1629E82E7E00E3EF79 /* OnboardingViewController.swift in Sources */,
+				2973BFEB29F5C9C900177249 /* ConfettiView.swift in Sources */,
 				29CB478929DDD7FB00E9C071 /* QuoteAndNeedViewModel.swift in Sources */,
 				290E2F4429DC7DD0006A1049 /* NoListCollectionViewCell.swift in Sources */,
 				29414E1D29E841C500E3EF79 /* OnboardingQuoteAndNeedViewModel.swift in Sources */,
@@ -428,6 +435,7 @@
 				29A274FE29E71D59008C87CD /* StringFormatter.swift in Sources */,
 				29414E1F29E86B1000E3EF79 /* Navigation.swift in Sources */,
 				29CB478B29DE128A00E9C071 /* NoListViewModel.swift in Sources */,
+				2973BFE929F5C9AA00177249 /* Confetti.swift in Sources */,
 				29FA059F29D4913A00514F90 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
