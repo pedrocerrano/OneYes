@@ -34,12 +34,13 @@ class ConfettiView: UIView {
     lazy var confettiTypes: [Confetti] = {
         let colors: [UIColor] = [
             .systemRed,
-            .systemBlue,
+            .systemPink,
+            .systemOrange,
             .systemYellow,
             .systemGreen,
-            .systemPink,
-            .systemPurple,
-            .systemTeal
+            .systemTeal,
+            .systemBlue,
+            .systemPurple
         ]
         
         return [ConfettiPosition.foreground, ConfettiPosition.background].flatMap { position in

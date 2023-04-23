@@ -15,6 +15,7 @@ struct Constants {
     
     struct Notifications {
         static let newReasonCreated = Notification.Name("newReasonCreated")
+        static let celebrateYes     = Notification.Name("celebrateYes")
     }
     
     struct CVCell {

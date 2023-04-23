@@ -23,7 +23,6 @@
 		29414E1D29E841C500E3EF79 /* OnboardingQuoteAndNeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29414E1C29E841C500E3EF79 /* OnboardingQuoteAndNeedViewModel.swift */; };
 		29414E1F29E86B1000E3EF79 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29414E1E29E86B1000E3EF79 /* Navigation.swift */; };
 		29414E2229E86E1D00E3EF79 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29414E2029E86E1D00E3EF79 /* Onboarding.storyboard */; };
-		2973BFE729F5C92100177249 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2973BFE629F5C92100177249 /* HomeViewModel.swift */; };
 		2973BFE929F5C9AA00177249 /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2973BFE829F5C9AA00177249 /* Confetti.swift */; };
 		2973BFEB29F5C9C900177249 /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2973BFEA29F5C9C900177249 /* ConfettiView.swift */; };
 		297BD63429E8758B001AD022 /* WindowsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BD63329E8758B001AD022 /* WindowsFormatter.swift */; };
@@ -67,7 +66,6 @@
 		29414E1C29E841C500E3EF79 /* OnboardingQuoteAndNeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuoteAndNeedViewModel.swift; sourceTree = "<group>"; };
 		29414E1E29E86B1000E3EF79 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		29414E2129E86E1D00E3EF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OneYes/Storyboards/Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
-		2973BFE629F5C92100177249 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2973BFE829F5C9AA00177249 /* Confetti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
 		2973BFEA29F5C9C900177249 /* ConfettiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		297BD63329E8758B001AD022 /* WindowsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsFormatter.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				290E2F4A29DC8463006A1049 /* HomeViewController.swift */,
-				2973BFE629F5C92100177249 /* HomeViewModel.swift */,
 				29DFF1B329DB4C1B00096F47 /* Quote and Need */,
 				290E2F4129DC7DA4006A1049 /* No LIst */,
 				290E2F4C29DC915C006A1049 /* No Detail View */,
@@ -406,7 +403,6 @@
 				29C0196429D63B42009EC687 /* Reason.swift in Sources */,
 				29C0196629D63B77009EC687 /* Log.swift in Sources */,
 				29FA05A129D4913A00514F90 /* QuoteAndNeedViewController.swift in Sources */,
-				2973BFE729F5C92100177249 /* HomeViewModel.swift in Sources */,
 				2927A3C529DF741300DB7F16 /* YesDetailLogListCollectionViewCell.swift in Sources */,
 				2927A3C229DF73B800DB7F16 /* YesDetailViewModel.swift in Sources */,
 				29FA059D29D4913A00514F90 /* AppDelegate.swift in Sources */,

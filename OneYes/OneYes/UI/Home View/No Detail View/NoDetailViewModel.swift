@@ -54,6 +54,7 @@ class NoDetailViewModel {
             reason.isCompleted = true
             service.updateReasonWithYes(forReason: reason) {
                 self.delegate?.reasonSuccessfullyHandled()
+                NotificationCenter.default.post(name: Constants.Notifications.celebrateYes, object: nil)
             }
         }
     }
