@@ -33,12 +33,10 @@ class ConfettiView: UIView {
     // MARK: Internal
     lazy var confettiTypes: [Confetti] = {
         let colors: [UIColor] = [
-            .systemRed,
-            .systemPink,
-            .systemOrange,
-            .systemYellow,
-            .systemGreen,
-            .systemTeal,
+            UIColor(red: 255/255, green: 0, blue: 0, alpha: 1),         // RED
+            UIColor(red: 255/255, green: 164/255, blue: 0, alpha: 1),   // ORANGE
+            UIColor(red: 255/255, green: 233/255, blue: 0, alpha: 1),   // YELLOW
+            UIColor(red: 0/255, green: 200/255, blue: 0/255, alpha: 1), // GREEN
             .systemBlue,
             .systemPurple
         ]
