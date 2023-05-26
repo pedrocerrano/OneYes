@@ -429,7 +429,7 @@
                                     <constraint firstAttribute="height" constant="40" id="B33-IE-TJv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DgT-wH-0OZ"/>
@@ -458,7 +458,7 @@
             <objects>
                 <viewController id="RmH-RL-XO4" customClass="YesListVC" customModule="OneYes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUp-Ze-jBt">
-                        <rect key="frame" x="0.0" y="0.0" width="359" height="205"/>
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="193"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got the Yes!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VU1-qM-OkV">
@@ -474,7 +474,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nMa-eA-fqa">
-                                <rect key="frame" x="0.0" y="40.5" width="359" height="156.5"/>
+                                <rect key="frame" x="0.0" y="40.5" width="359" height="144.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="etL-FU-33u">
                                     <size key="itemSize" width="351" height="106"/>

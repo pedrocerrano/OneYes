@@ -35,10 +35,10 @@ struct QuoteData {
     static var quotesData: [Quote] = QuoteDataService.load("quotesData.json")
     
     static func loadRandomQuote(for quoteString: UILabel) {
-        let index = 1
-        let quote = quotesData[index].quote
-        let author = quotesData[index].author
-        quoteString.text = "\"\(quote)\" -\(author)"
+        let index                  = Int.random(in: 0..<quotesData.count)
+        let quote                  = quotesData[index].quote
+        let author                 = quotesData[index].author
+        quoteString.text           = "\"\(quote)\" -\(author)"
         quoteString.attributedText = NSMutableAttributedString()
             .quoteItalics("\"\(quote)\"")
             .quoteBold(" -\(author)")
